@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko">
+  <head>
+    <title>이시국앱</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet"/>
+    <!-- 로그인 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main_card.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    
+    <!-- 제작자 -->
+
+    <style>
+      @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      #banner1{
+        background-image: url(images/main_page1.jpg);
+        background-repeat:no-repeat;
+      }
+      #banner{
+        background-image: url(images/main_page.jpg);
+        background-repeat:no-repeat;
+      }
+      #header{
+        background-color: rgba(0,0,0,0);
+      }
+    </style>
+  </head>
+  <body class="is-preload" style="font-family:'nanumsquare'">
+    <section id="banner">
+      <div class="content">
+      <header id="header">
+        <nav id="nav">
+          <ul style="color:#fff">
+            <div style = "color: yellow;float: left;" id = "username1" > 진석영님 </div>
+            <li><a href="emm.html">강의 평가</a></li> <!-- Electives Main 줄임 : em -->
+            <li><a href="elements.html">공지사항</a></li>
+            <li><a href="creators.html">만든 사람들</a></li>
+            <li><a onclick="logout();" href='index.html' class="button primary">로그아웃</a></li>
+          </ul>
+        </nav>
+      </header>
+    </section>
+
+      <!-- Banner, 초기 페이지 -->
+      <section id="banner1" class="is-preload">
+        <div class="banner1 content1" 
+        style="
+        position:relative; 
+        width:auto;
+        height:auto; 
+        left: -3rem; 
+        top: -1.56rem;
+        ">
+     
+            <a href="https://www.hknu.ac.kr/sites/kor/index.do" target="_blank" >&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+            &emsp;&emsp;
+            <a href="https://cyber.hknu.ac.kr/ilos/main/main_form.acl"target="_blank">&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+            &emsp;&emsp;        
+            <a href="http://sugang.hknu.ac.kr/hknu/"  target="_blank">&emsp;&emsp;&emsp;&emsp;&emsp;</a>
+          
+      </div>
+      
+    </section>
+
+
+      <!-- Footer -->
+      <!-- <footer id="footer">
+        <ul class="icons" >
+          <li>
+            <a href="https://www.hknu.ac.kr/sites/kor/index.do" style="color: #1c1d26;" target="_blank" >
+              <img src="images/logo1.jpg" alt="" width="90" height="50" style="margin-top:20px"></a>
+          </li>
+          <li>
+            <a href="https://cyber.hknu.ac.kr/ilos/main/main_form.acl" style="color: #1c1d26;"target="_blank">
+              <img src="images/logo2.png" alt="" width="140" height="52"></a>
+          </li>
+          <li>
+
+            <a href="http://sugang.hknu.ac.kr/hknu/"  style="color: #1c1d26;"target="_blank">
+              <img src="images/logo3.png" alt="" width="60" height="55"></a>
+          </li>
+        </ul>
+        <ul class="copyright">
+          <li>&copy; 한경인을 위한 교양 정보 공유 앱</li>
+          <li>Design: SEKim</a></li>
+        </ul>
+      </footer> -->
+    </div>
+
+	<!-- Scripts -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/login_func.js"></script>
+    <script src="assets/js/main_card.js"></script>
+    
+
+  </body>
+</html>

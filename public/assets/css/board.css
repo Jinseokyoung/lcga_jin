@@ -1,0 +1,243 @@
+html, body {
+  margin:0;
+  padding:0;
+}
+
+.comic {
+  display: flex;
+  flex-wrap:wrap;
+  font-family:'hanna', cursive;
+  padding:1vmin;
+  height:510px;
+  overflow-x:hidden; 
+  overflow-y:auto; 
+}
+
+.sodyd{
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.panel {
+  background-color:#fff;
+  border:solid 2px #000;
+  box-shadow:0 6px 6px -6px #000;
+  display:inline-block;
+  flex:1 1;
+  height: 8vw;
+  margin:1vmin;
+  overflow: visible;
+  position:relative;
+}
+
+/* .text {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  position: absolute;
+
+} */
+
+.first {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  width: auto;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.second {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  width: auto;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.third {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  width: auto;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.fourth {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  width: auto;
+  top:-2px;
+  transform:skew(-15deg);
+  
+}
+.fifth {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  width: auto;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.sixth {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  width: auto;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.seventh { /*과제*/
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.eighth {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  top:-2px;
+  transform:skew(-15deg);
+}
+.ninth {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  top:-2px;
+  transform:skew(-15deg);
+}
+
+.tenn {
+  background-color:#000;
+  border:solid 2px #000;
+  margin:0;
+  padding:0px 10px;
+  left:-0.35vw;
+  position: relative;
+  top:-2px;
+  transform:skew(-15deg);
+}
+
+.speech {
+  background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:.5em;
+  padding:.5em 1em;
+  position:relative;
+}
+.container {
+  width: 250px;
+  height: 140px;
+  overflow: scroll;
+}
+
+
+.speech:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.speech:after {
+  border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.panel:nth-child(1) {
+  flex-basis: 7vw;
+}
+.panel:nth-child(2) {
+  flex-basis: 16vw;
+}
+.panel:nth-child(3) {
+  flex-basis: 7vw;
+}
+.panel:nth-child(4) {
+  flex-basis: 10vw;
+}
+.panel:nth-child(5) {
+  flex-basis: 10vw;
+}
+.panel:nth-child(6) {
+  flex-basis: 10vw;
+}
+.panel:nth-child(7) {
+  flex-basis: 32vw;
+}
+.panel:nth-child(8) {
+  flex-basis: 32vw;
+}
+.panel:nth-child(9) {
+  flex-basis: 32vw;
+}
+.panel:nth-child(10) {
+  flex-basis: 32vw;
+}
+
+/* background colours */
+
+.panel:nth-child(4n+1) {
+  background-image:radial-gradient(circle, yellow, orange);
+}
+
+.panel:nth-child(4n+2) {
+  background-image:radial-gradient(circle, lightblue, deepskyblue);
+}
+
+.panel:nth-child(4n+3) {
+  background-image:radial-gradient(circle, palegreen, yellowgreen);
+}
+
+.panel:nth-child(4n+4) {
+  background-image:radial-gradient(circle, lightcoral, tomato);
+}

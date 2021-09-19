@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+
+<html lang="ko">
+  <head>
+      <title>강의평가 | 이시국앱</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+      <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+      <link rel="stylesheet" href="assets/css/button12.css">
+      <link rel="stylesheet" href="assets/css/star.css">
+      <!-- 공지사항 css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+      <link rel="stylesheet" href="assets/css/style1.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="assets/css/style2.css">
+
+      <!-- 강의평가 카드 css -->
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="assets/css/style3.css">
+      <!-- 강의 더 보기 -->
+      <link rel="stylesheet" href="assets/css/style4.css">
+      <link rel="stylesheet" href="assets/css/style_main.css">
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+      <!-- 게시판 -->
+      <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css'> -->
+      <link rel="stylesheet" href="assets/css/em_board.css" />
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+        @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      </style>
+  </head>
+<body class="is-preload landing" style="font-family:'nanumsquare'" >
+      <div id="page-wrapper">
+        <header id="header">
+          <h4 id="logo">
+            <a href="login.html"><img src="images/home.png" alt="" weight=90px; height=50px;
+              style="margin-left: 15px"/></a>
+          </h4>
+            <nav id="nav">
+              <ul>
+                  <li><a href="emm.html">강의 평가</a></li> <!-- Electives Main 줄임 : em -->
+                  <li><a href="elements.html">공지사항</a></li>
+                  <li><a onclick="logout();" href='index.html' class="button primary">로그아웃</a></li>
+              </ul>
+            </nav>
+        </header>
+      </div>
+
+      <div class="container" style = " margin-top: -180px;">
+
+        <div class="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center" style = "height : 870px;">
+              <div class="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
+              <div class="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full"></div>
+              <div class="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full"></div>
+              <div class="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
+          </div>
+
+          <div class="container mx-auto h-screen py-16 px-8 relative">
+            <div class="flex w-full rounded-lg h-full lg:overflow-hidden overflow-auto lg:flex-row flex-col shadow-2xl">
+
+
+              <div class="lg:w-1/3 bg-white text-gray-800 flex flex-col">
+                <div class="p-8 shadow-md relative bg-white">
+                  <div class="flex items-center">
+                    <p id = "username3">userName님이 작성한 후기입니다.</p>
+                    <!-- <button class="bg-indigo-100 text-indigo-400 ml-auto w-8 h-8 flex items-center justify-center rounded">
+                      <svg stroke="currentColor" class="w-4 h-4" viewBox="0 0 24 24" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
+                      </svg>
+                    </button> -->
+                  </div>
+
+                    <div class="mt-6 flex">
+                      <!-- <button  class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none">
+                        <strong style="color:#ffffff">내가 작성한 후기</strong></button> -->
+                      <!-- <button class="ml-4 text-gray-600 py-2 text-sm px-3 rounded focus:outline-none border border-gray-400">
+                        New Task
+                      </button> -->
+
+
+                  </div>
+
+                </div>
+                        <ul id = "leftside" class="learn-more overflow-auto flex-grow"  >
+                        </ul>
+                </div>
+
+
+
+
+
+                      <div id="contactForm" cstyle = "color: black">
+                        <form id = "popupside" class = "post-it" action="#" style="color: black;">
+                            <div>
+                              <p class="sticky taped" id = "stlecture"></p>
+                            </div>
+                             <div>
+                                교수명
+                              </div>
+                        </form>
+                      </div>
+
+
+                       <div class="lg:w-2/3 bg-indigo-600 text-white flex flex-col">
+                        <div class="p-4 bg-indigo-700  items-center">
+                          <div id = "profside">
+
+                          </div>
+                        </div>
+
+                        <div class="p-8 flex flex-1 items-start" style = "width: 3000px;">
+                       <div id = "card1"  href="#popup1" class="card button33" style = "height: 90%">
+                         <div class="button-backgrounds">
+                              <div class="button-circle button-circle1"></div>
+                              <div class="button-circle button-circle2"></div>
+                              <div class="button-circle button-circle3"></div>
+                              <div class="button-circle button-circle4"></div>
+                            </div>
+                         <div class="mails">
+                           <div id = "1A" class="mail-names">과목명</div>
+                         </div>
+                         <div class="wrapper2">
+                              <div class="popup" >
+                                  <div class="popup-inside">
+                                      <div class="backgrounds">
+                                          <div class="background"></div>
+                                          <div class="background background2"></div>
+                                          <div class="background background3"></div>
+                                          <div class="background background4"></div>
+                                          <div class="background background5"></div>
+                                          <div class="background background6"></div>
+                                      </div>
+                                  </div>
+                                  <div class="content" id = "testside" style="height:100%;">
+                                      <div class="content-wrapper" >
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <!-- <br>
+                                        <br>
+                                        <br>
+                                        <br> -->
+
+
+                                        <div>
+                                          <div style = "float:right;width:84%;" id = "popavg" class=" Stars2" style="--rating: 5;"> </div>
+                                        <ul style = "float:right;width:16%; position: relative; top:40px"  class = "ull">
+                                            <li>
+                                              <span>학점</span>
+                                            </li>
+                                            <li id = "creditrr"class="name">
+                                              3
+                                            </li>
+                                            <li>
+                                              <a href="#" title='이시국앱'></a>
+                                            </li>
+                                          </ul>
+                                      </div>
+                                      <svg xmlns="http://www.w3.org/2000/svg" id="레이어_1" data-name="레이어 1" viewBox="0 0 800.01 406.27">
+                      <defs><style>.cls-1,.cls-11,.cls-16{fill:#fff;}.cls-2{fill:#f2f2f2;}
+                      .cls-3{fill:#f2f6fd;}.cls-4{fill:#f9cd5f;}
+                      .cls-5{font-weight: 900;font-size:30px;}.cls-25{width: 100px;z-index: 33;}
+                      .cls-10,.cls-11,.cls-12,.cls-13,.cls-16,.cls-17,.cls-20,.cls-5,.cls-6,.cls-7
+                      {font-family:NanumSquareOTFB-KSCpc-EUC-H, NanumSquareOTF;}
+                      .cls-10
+                      {
+                        font-size:23px;font-weight:800;
+                      }
+                      .cls-11,.cls-17,.cls-6,.cls-8
+                      {font-size:19px;font-weight:800;}.cls-15,.cls-20,.cls-6,.cls-7
+                        {fill:gray;}.cls-16,.cls-7{font-size:17px;}
+                        .cls-12,.cls-13,.cls-17,.cls-8{
+                          fill:#3e4684;}
+                          .cls-9{
+                            fill:#3e4684;}
+                          .cls-8{font-family:NanumSquareOTFEB-KSCpc-EUC-H, NanumSquareOTF;letter-spacing:-0.02em;}
+                          .cls-12
+                          {font-size:22px;font-weight: 800;}
+                          .cls-13{align-content: right;font-size:24.61px;font-weight: 800;}
+                          .cls-14{font-family:NanumSquareOTFL-KSCpc-EUC-H, NanumSquareOTF;
+                          }.cls-18{letter-spacing:-0.05em;}.cls-19{letter-spacing:-0.02em;}.cls-20{
+                            font-size:13px;letter-spacing:-0.02em;}
+                          </style></defs><title>화면2</title>
+                          <rect class="cls-1" width="800" height="406">
+                          </rect>
+                          <rect class="cls-3" x="1.01" y="208.23" width="799" height="181.77"/>
+                          <rect class="cls-2" x="28.01" y="20.23" width="88" height="38" rx="17.72"/>
+
+                          <text id = 'poplecture' class="cls-5" transform="translate(196.87 50.08)">SF문학과 과학적 상상력 :: 전지니</text>
+
+                          <text id = "seye" class="cls-6" transform="translate(30.01 194.08)">2020년 1학기</text>
+                          <text class="cls-7" transform="translate(102.91 331.46)">수업을 위해 지출하는 비용</text>
+                          <text class="cls-7" transform="translate(410.59 331.46)">지출 사유</text>
+                          <text id = "area1"class="cls-8" transform="translate(48.21 46.08)">1영역</text>
+                          <text class="cls-7" transform="translate(255.91 251.72)">발표</text>
+                          <text class="cls-7" transform="translate(102.38 251.72)">팀플</text>
+                          <text class="cls-7" transform="translate(410.05 251.72)">과제</text>
+                          <text class="cls-7" transform="translate(583.83 251.72)">소통</text>
+                          <rect class="cls-1" x="148.21" y="236.36" width="74.66" height="45.95" rx="22.97"/>
+                          <rect class="cls-1" x="301.47" y="236.36" width="74.66" height="45.95" rx="22.97"/>
+                          <rect id = "hakwid" class="cls-9" x="455.72" y="236.36" width="101.74" height="45.95" rx="22.97"/>
+                          <text id = "popteam" class="cls-10" transform="translate(178.49 265.47)">O</text>
+                          <text id = "announce" class="cls-10" transform="translate(332.43 265.47)">X</text>
+                          <text id = "asic" class="cls-11" transform="translate(467.09 265.47)">주 1~2회</text>
+                          <text id="commun" class="cls-12" transform="translate(630.2 266.75)">빠름</text>
+                          <text id = "moneyc" class="cls-13" transform="translate(174.06 363.14)">10,000~30,000
+                          </text>
+                          <rect class="cls-15" x="519.71" y="326.65" width="13.13" height="13.13"/>
+                          <rect class="cls-4" x="569.18" y="326.65" width="13.13" height="13.13"/>
+                          <rect class="cls-9" x="657.2" y="326.65" width="13.13" height="13.13"/>
+                          <rect id = "tag33"class="cls-2" x="128.62" y="81.23" width="100" height="32" rx="16"/>
+                          <text class="cls-16" transform="translate(143.49 102.33)">#꿀교양</text>
+                          <rect id = "tag55"class="cls-2" x="251.32" y="81.23" width="195" height="32" rx="16"/>
+                          <text class="cls-16" transform="translate(269.8 102.33)">#들었는데안들었어요</text>
+                          <rect id = "tag11" class="cls-2" x="469.01" y="81.23" width="230" height="32" rx="16"/>
+                          <text class="cls-16" transform="translate(479.49 102.33)">#강의는수면제성적은황천길</text>
+                          <rect id = "tag22"class="cls-2" x="128.62" y="121.23" width="105" height="32" rx="16"/>
+                          <text class="cls-16" transform="translate(143.49 142.33)">#흥미로움</text>
+                          <rect id = "tag66"class="cls-2" x="266.32" y="121.23" width="145" height="32" rx="16"/>
+                          <text class="cls-16" transform="translate(288.8 142.33)">#억지로 들음</text>
+                          <rect id = "tag44" class="cls-2" x="439.01" y="121.23" width="160" height="32" rx="16"/>
+                          <text class="cls-16" transform="translate(459.49 142.33)">#암기가 많아요</text>
+                          <path class="cls-1" d="M301.47,356.4"/>
+                          <text class="cls-17" transform="translate(47.01 132.28)">
+                            <tspan class="cls-18">T</tspan>
+                            <tspan class="cls-19" x="10.42" y="0">A</tspan>
+                            <tspan x="23.56" y="0">G</tspan>
+                          </text>
+                          <text class="cls-20" transform="translate(535.43 336.87)">교재</text>
+                          <text class="cls-20" transform="translate(585.48 336.87)">실습/견학비</text>
+                          <text class="cls-20" transform="translate(672.45 336.87)">재료비</text>
+                          <rect id="fi" class="cls-15" x="412.23" y="347.79" width="107.48" height="17.23"/>
+                          <rect id = "se"class="cls-4" x="442.59" y="347.79" width="218.66" height="17.23"/>
+                          <rect id = "th"class="cls-9" x="705.14" y="347.79" width="1" height="17.23"/>
+                        </svg>
+                        <div   style = "overflow:auto;width: 700px; height: 130px;word-break:break-all;color: black;background:#f2f2f2;">
+                                      <textarea readonly id="contentc" 
+                                      style ="display:table-cell;vertical-align:middle;text-align: center;width:700px;height:130px; resize: none;"></textarea>
+                                    </div>
+                                    <button  id = "editt" style = "margin-top:15px;"class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none">
+                                      <strong style="color:#ffffff">수정</strong></button>
+                                      <button  id = "deletee" style = "margin-top:15px;"class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none">
+                                        <strong style="color:#ffffff">삭제</strong></button>
+
+
+
+
+
+
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                         <div id = "1B" class="Stars" style="--rating: 5;">
+                         </div>
+                         <div>
+                         </div>
+                         <div class="bottom-info">
+                           <div class="check1">
+                             <label class="checkbox">
+                       <input type="checkbox"/>
+                       </label>
+
+                           </div>
+                           <div  id = "1R" style = "font-size : 0.1px; color : #fff"></div>
+                           <div id = "1C" class="date"></div>
+                         </div>
+                       </div>
+                      
+                       
+                       <div id = "card2" class="card" style = "margin-left: 1%; height: 90%";>
+                          <div class="mails">
+
+                            <div id = "2A" class="mail-names">
+                              과목명
+                            </div>
+                          </div>
+                          <div id = "2B" class="Stars" style="--rating: 3;">
+                          </div>
+                          <div>
+                          </div>
+                          <div class="bottom-info">
+                            <div class="check1">
+                              <label class="checkbox">
+                        <input type="checkbox"/>
+                        </label>
+                              <div class="star">
+
+                              </div>
+                              <div class="star">
+
+                              </div>
+
+                            </div>
+                            <div  id = "2R" style = "font-size : 0.1px; color : #fff"></div>
+                            <div id = "2C" class="date"></div>
+                          </div>
+                        </div>   
+                        
+
+
+
+                       </div>
+
+                       <div class="p-8 flex flex-1 items-start" style = "width: 3000px;">
+                      <div id = "card3" class="card2"style = "height:90%;  margin-top:-2%;">
+                        <div class="mails">
+
+                          <div id = "3A" class="mail-names">
+
+                          </div>
+                        </div>
+                        <div id = "3B" class="Stars" style="--rating: 3;">
+                        </div>
+                        <div>
+                        </div>
+                        <div class="bottom-info">
+                          <div class="check1">
+                            <label class="checkbox">
+                      <input type="checkbox"/>
+                      </label>
+                            <div class="star">
+
+                            </div>
+                            <div class="star">
+
+                            </div>
+
+                          </div>
+                          <div  id = "3R" style = "font-size : 0.1px; color : #fff"></div>
+                          <div id = "3C" style = "color:grey;"class="date"></div>
+                        </div>
+                      </div>
+                      
+                      
+                      <div id = "card4" class="card2"style = "margin-left: 1%; margin-top:-2%; height: 90%;">
+                         <div class="mails">
+
+                           <div id = "4A" class="mail-names">
+
+                           </div>
+                         </div>
+                         <div id = "4B" class="Stars" style="--rating: 3;">
+                         </div>
+                         <div>
+                         </div>
+                         <div class="bottom-info">
+                           <div class="check1">
+                             <label class="checkbox">
+                       <input type="checkbox"/>
+                       </label>
+                             <div class="star">
+
+                             </div>
+                             <div class="star">
+
+                             </div>
+
+                           </div>
+                           <div  id = "4R" style = "font-size : 0.1px; color : #fff"></div>
+                           <div id = "4C" style = "color:grey;"class="date"></div>
+                         </div>
+                       </div>    
+                       
+
+                       <div class="frame1" style="left:1rem;">
+                            
+                        <a id = "bbutton" class="frame1 btn1" >
+                          <i  class="fas fa-angle-left" ></i>
+                        </a>
+                        <a id = "fbutton" class="frame1 btn1"> <!--  style="margin-left:93px;" -->
+                          <i class="fas fa-angle-right" ></i>
+                        </a>
+
+                      </div>
+                      </div>
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          </div>
+                        </div>
+                       </div>
+                     </div>
+                    </div>
+
+                    <!-- <div class="fixed h-screen right-0 top-0 items-center flex">
+                     <div class="p-2 bg-white border-l-4 border-t-4 border-b-4 border-indigo-400 inline-flex items-center rounded-tl-lg shadow-2xl rounded-bl-lg z-10 flex-col">
+                       <button class="bg-gray-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="gray"></button>
+                       <button class="bg-red-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="red"></button>
+                       <button class="bg-orange-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="orange"></button>
+                       <button class="bg-green-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="green"></button>
+                       <button class="bg-teal-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="teal"></button>
+                       <button class="bg-blue-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="blue"></button>
+                       <button class="bg-indigo-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="indigo"></button>
+                       <button class="bg-purple-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="purple"></button>
+                       <button class="bg-pink-500 w-5 h-5 rounded-full outline-none focus:outline-none" theme-button="pink"></button>
+                     </div>
+                    </div> -->
+
+
+
+
+               </div>
+            </div>
+      </div>
+
+      <!-- Scripts -->
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase.js"></script>
+       <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.scrolly.min.js"></script>
+         <script src="assets/js/jquery.dropotron.min.js"></script>
+         <script src="assets/js/jquery.scrollex.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+         <script src="assets/js/mypage.js"></script>
+         <!-- 공지사항 -->
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+         <script src="https://use.fontawesome.com/3b601d7d53.js"></script>
+         <script  src="assets/js/script1.js"></script>
+         <script  src="assets/js/script_main.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+
+         <script  src="assets/js/script_em_board.js"></script>
+         <script  src="assets/js/login_func.js"></script>
+
+   </body>
+</html>

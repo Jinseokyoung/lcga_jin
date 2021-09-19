@@ -1,0 +1,706 @@
+<!DOCTYPE HTML>
+
+<html lang="ko">
+  <head>
+      <title>강의평가 | 이시국앱</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+      <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+      <link rel="stylesheet" href="assets/css/button12.css">
+      <link rel="stylesheet" href="assets/css/star.css">
+      <!-- 공지사항 css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+      <link rel="stylesheet" href="assets/css/style1.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="assets/css/style2.css">
+
+      <!-- 강의평가 카드 css -->
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="assets/css/style3.css">
+      <!-- 강의 더 보기 -->
+      <link rel="stylesheet" href="assets/css/style4.css">
+      <link rel="stylesheet" href="assets/css/style_main.css">
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+      <!-- 게시판 -->
+      <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css'> -->
+      <link rel="stylesheet" href="assets/css/em_board.css" />
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+        @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      </style>
+  </head>
+<body class="is-preload landing" style="font-family:'nanumsquare'" >
+      <div id="page-wrapper">
+        <header id="header">
+          <h4 id="logo">
+            <a href="login.html"><img src="images/home.png" alt="" weight=90px; height=50px;
+              style="margin-left: 15px"/></a>
+          </h4>
+            <nav id="nav">
+              <ul>
+                  <li><a href="emm.html">강의 평가</a> <!-- Electives Main 줄임 : em -->
+                  <script>(location.href, "detab", "toolbar=0"); window.close()</script></li>
+                  <li><a href="elements.html">공지사항</a></li>
+                  <li><a onclick="logout();" href='index.html' class="button primary">로그아웃</a></li>
+              </ul>
+            </nav>
+        </header>
+      </div>
+
+      <div class="container">
+          <div class="et-hero-tabs-container" style="font-family: 'nanumsquare','cursive'; font-weight:900;">
+              <a id = "duddur1" class="et-hero-tab" href="#tab-1영역" >1 영역</a>
+              <a id = "duddur2" class="et-hero-tab" href="#tab-2영역" >2 영역</a>
+              <a id = "duddur3" class="et-hero-tab" href="#tab-3영역" >3 영역</a>
+              <a id = "duddur4" class="et-hero-tab" href="#tab-4영역">4 영역</a>
+              <a id = "duddur5"class="et-hero-tab" href="#tab-5영역">5 영역</a>
+              <a id = "duddur6"class="et-hero-tab" href="#tab-6영역">6 영역</a>
+              <a id = "duddur7" class="et-hero-tab" href="#tab-7영역">7 영역</a>
+              <a id = "duddur8" class="et-hero-tab" href="#tab-8영역">8 영역</a>
+              <a id = "duddurglobal" class="et-hero-tab" href="#tab-글컬">글 &nbsp;컬</a>
+              <a id = "duddurth" class="et-hero-tab" href="#tab-소양">소 &nbsp;양</a>
+              <a id = "duddurdbd" class="et-hero-tab" href="#tab-융합">융 &nbsp;합</a>
+              <a id = "duddurrhd" class="et-hero-tab" href="#tab-공통">공 &nbsp;통</a>
+              <span class="et-hero-tab-slider"></span>
+          </div>
+
+
+          <div class="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center" style = "height : 870px;">
+            <span>
+              <a href="#leftside" class="goto-next scrolly" style="position:absolute; top:94px">Next</a>
+            </span>
+              <div class="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
+              <div class="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full"></div>
+              <div class="w-64 h-64 ml-auto relative opacity-50 -mr-32 bg-indigo-300 rounded-full"></div>
+              <div class="w-screen h-64 absolute opacity-50 bottom-0 right-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
+          </div>
+
+          <div class="container mx-auto h-screen py-16 px-8 relative">
+            <div  style = "width:133%;margin-left: -113px;"class="flex w-full rounded-lg h-full lg:overflow-hidden overflow-auto lg:flex-row flex-col">
+              <div class="lg:w-1/4 bg-white text-gray-800 flex flex-col">
+                <div class="p-8 shadow-md relative bg-white">
+                  <div class="flex items-center">
+                    <img src="images/face.png" alt="" weight=90px; height=50px;
+                      style="margin-left: 0px; margin-top: -4px;"/>
+                      &nbsp
+                      &nbsp
+                      &nbsp
+                    <p id = "username3" style="margin-left: -10px;">userName님, 반갑습니다.</p>
+                    <button style="width:30%; left:8.5%;" class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none" onclick="location.href = 'mypage.html'">
+                      <strong style="color:#ffffff">내가 쓴 후기</strong></button>
+                    <!-- <button class="bg-indigo-100 text-indigo-400 ml-auto w-8 h-8 flex items-center justify-center rounded">
+                      <svg stroke="currentColor" class="w-4 h-4" viewBox="0 0 24 24" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
+                      </svg>
+                    </button> -->
+                  </div>
+
+
+                  <div class="mt-6 flex">
+                    <!-- <button  class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none" onclick="location.href = 'ec.html'">
+                      <strong style="color:#ffffff">강의 후기 작성</strong></button> -->
+                    <!-- <button class="ml-4 text-gray-600 py-2 text-sm px-3 rounded focus:outline-none border border-gray-400">
+                      New Task
+                    </button> -->
+                    <div class="relative " style="width:100%;">
+                      <input id="searchname1" placeholder="강의명 또는 교수명을 검색해 보세요." type="text" style="float:left; margin-left: -3%; width: 80%;" class="w-full border rounded border-gray-400 h-full focus:outline-none pl-4 pr-8 text-gray-700 text-sm text-gray-500">
+                      <button style="float:left; width: 21%; left: 4%;" class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none" onclick="searchlec();">
+                        <strong style="color:#ffffff">검색</strong></button>
+                    </div>
+                </div>
+
+              </div>
+              <div>
+                <button style="float:left; width:60%; " class="bg-indigo-500 text-white py-2 text-sm px-3 focus:outline-none" onclick="orderlec();">
+                  <strong style="color:#ffffff">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp강의명&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▼</strong></button>
+                  <button style="float:left; width:40%;" class="bg-indigo-500 text-white py-2 text-sm px-3 focus:outline-none" onclick="orderstar();">
+                    <strong style="color:#ffffff">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp평점&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp▼</strong></button>
+              </div>
+                        <ul id = "leftside" class="learn-more overflow-auto flex-grow" >
+                        </ul>
+                      </div>
+
+
+                      <div id="contactForm" cstyle = "color: black">
+                        <form id = "popupside" class = "post-it" action="#" style="color: black;">
+                           
+                            <div>
+                              <p class="sticky taped" id = "stlecture"></p>
+                            </div>
+                              <div>
+                                교수명
+                              </div>
+                        </form>
+                      </div>
+
+
+
+
+
+
+                    <div class="bg-indigo-1000" style="overflow-y:scroll;" >
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="685"
+                                  viewBox="0 0 300 685" style="position:relative;">
+                                  <defs>
+                                    <style>
+                                  .clss-1,.clss-10{
+                                    fill:none;
+                                  }
+                                  .clss-12,.clss-13,.clss-16,.clss-19,.clss-2,.clss-20,.clss-22,.clss-23,.clss-9{
+                                    isolation:isolate;
+                                  }
+                                  .clss-3{
+                                    mix-blend-mode:
+                                    multiply;
+                                  }
+                                  .clss-4{
+                                    clip-path:url(#clip-path);
+                                  }
+                                  .clss-5{
+                                    fill:#181f4c;
+                                  }
+                                  .clss-6{
+                                    fill:#f9cd5f;
+                                  }
+                                  .clss-7{
+                                    font-size:24px;
+                                    text-align: center;
+                                  }
+                                  .clss-14,.clss-16,.clss-23,.clss-7{
+                                    fill:#fff;
+                                  }
+                                  .clss-12,.clss-13,.clss-16,.clss-17,.clss-19,.clss-22,.clss-23,.clss-24,.clss-7{
+                                    font-family:NanumSquareOTFB-KSCpc-EUC-H, NanumSquareOTF;
+                                  }
+                                  .clss-11,.clss-8{
+                                    fill:#fefefe;
+                                  }
+                                  .clss-11,.clss-9{
+                                    font-size:14.55px;
+                                    font-family:NanumSquareOTFEB-KSCpc-EUC-H, NanumSquareOTF;
+                                    letter-spacing:-0.02em;
+                                  }
+                                  .clss-15,.clss-19,.clss-20,.clss-9{
+                                    fill:#3e4684;
+                                  }
+                                  .clss-10{
+                                    stroke:#fefefe;
+                                    stroke-miterlimit:10;
+                                  }
+                                  .clss-12,.clss-24{
+                                    font-size:15.23px;
+                                  }
+                                  .clss-12,.clss-21,.clss-22,.clss-24{
+                                    fill:gray;
+                                  }
+                                  .clss-13,.clss-16,.clss-20{
+                                    font-size:16.92px;
+                                  }
+                                  .clss-17{
+                                    font-size:22.84px;
+                                  }
+                                  .clss-17,.clss-18{
+                                    fill:#eaf2fe;
+                                  }
+                                  .clss-19{
+                                    font-size:20.82px;
+                                  }
+                                  .clss-20{
+                                    font-family:NanumSquareOTFL-KSCpc-EUC-H, NanumSquareOTF;
+                                  }
+                                  .clss-22{
+                                    font-size:14.79px;
+                                    letter-spacing:-0.02em;
+                                  }
+                                  .clss-23{
+                                    font-size:12.69px;
+                                  }
+                                  .clss-25{
+                                    letter-spacing:-0.05em;
+                                  }
+                                  .clss-26{
+                                    letter-spacing:0em;
+                                  }
+                                  .cls-15{
+                                    position: relative;
+                                  }
+                                  .clss-99{
+                                    fill:#f2f2f2;
+                                  }
+                                </style>
+                                <clipPath id="clip-path">
+                                  <rect class="clss-1" x="-1562.1" y="186.5" width="1350" height="589"/>
+                                </clipPath>
+                              </defs>
+                              <title>후기평균</title>
+                              <g class="clss-2">
+                                <g id="레이어_1" data-name="레이어 1">
+                                  <g class="clss-3"><g class="clss-4">
+                                    <image width="2047" height="1359" transform="translate(-1564.2 45.52) scale(0.89)"
+                                    xlink:href="../%E1%84%8C%E1%85%A6%E1%84%86%E1%85%A9%E1%86%A8%20%E1%84%8B%E1%85%A5%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%B7-1.jpg"/>
+                                  </g>
+                                </g>
+                                <rect style="position:relative" class="clss-5" width="332" height="685"/>
+                                <polygon id="1star" class="clss-6" points="73.92 86.06 78.31 94.94 88.1 96.36 81.02 103.27 82.69 113.03 73.92 108.42"/>
+                                <polygon id="0.5star" class="clss-6" points="74.52 108.42 65.17 113.03 66.84 103.27 59.75 96.36 69.55 94.94 74.42 86.06"/>
+                                <polygon id = "2star" class="clss-6" points="111.96 86.06 116.35 94.94 126.14 96.36 119.05 103.27 120.73 113.03 111.96 108.42 "/>
+                                <polygon id = "1.5star" class="clss-6" points="111.96 108.42  103.2 113.03 104.87 103.27 97.78 96.36 107.58 94.94 111.96 86.06 "/>
+                                <polygon id = "3star" class="clss-6" points="150 86.06 154.38 94.94 164.18 96.36 157.09 103.27 158.76 113.03 150 108.42"/>
+                                <polygon id = "2.5star" class="clss-6" points="150.5 108.42 141.24 113.03 142.91 103.27 135.82 96.36 145.62 94.94 150.5 86.06"/>
+                                <polygon id= "4star" class="clss-21" points="188.03 86.06 192.41 94.94 202.21 96.36 195.12 103.27 196.8 113.03 188.03 108.42"/>
+                                <polygon id= "3.5star" class="clss-6" points="188.03 108.42 179.27 113.03 180.94 103.27 173.85 96.36 183.65 94.94 188.03 86.06"/>
+                                <polygon id = "5star" class="clss-21" points="226.07 86.06 230.45 94.94 240.25 96.36 233.16 103.27 234.84 113.03 226.07 108.42"/>
+                                <polygon id = "4.5star" class="clss-21" points="226.57 108.42 217.3 113.03 218.97 103.27 211.89 96.36 221.69 94.94 226.57 86.06"/>
+                                <text id = "centerlecture" class="clss-7" transform="translate(28.51 152.06)">SF문학과 과학적 상상력</text>
+                                  <text id = "centerprof"class="clss-7" transform="translate(118.51 192.06)">전지니</text>
+                                <rect class="clss-8" x="80.49" y="37.35" width="64.02" height="27.65" rx="12.89"/>
+                                <text id = "centerarea" class="clss-9" transform="translate(97.16 55.14)">1영역</text>
+                                <rect class="clss-10" x="157.49" y="37.35" width="64.02" height="27.65" rx="12.89"/>
+                                <text id = "centercredit" class="clss-11" transform="translate(172.16 55.14)">3학점</text>
+                                <text class="clss-12" transform="translate(31.38 236.48)">팀플</text>
+                                <circle class="clss-6" cx="48.47" cy="268.73" r="22"/>
+                                <text id = "centerteam" class="clss-13" transform="translate(41.49 275.42)">X</text>
+                                <text class="clss-12" transform="translate(91.85 236.48)">발표</text>
+                                <circle class="clss-14" cx="106.93" cy="268.73" r="22"/>
+                                <text id = "centerannounce" class="clss-13" transform="translate(101.39 275.42)">X</text>
+                                <text class="clss-12" transform="translate(168.36 236.48)">과제</text>
+                                <path class="clss-15" d="M172.84,247.86h47.21c10.73,0,19.43,9.35,19.43,20.87h0c0,11.52-8.7,20.86-19.43,20.86H157.84c-10.73,0-19.43-9.34-19.43-20.86h0C138.41,257.21,147.11,247.86,157.84,247.86Z"/>
+                                <text id = "centerasi" class="clss-16" transform="translate(153.53 274.48)">주 1~2회</text>
+                                <text class="clss-12" transform="translate(254.81 236.48)">소통</text>
+                                <text class="clss-17" transform="translate(247.96 274.99)">빠름</text>
+                                <rect class="clss-18" x="58.92" y="342.02" width="194.17" height="42.3" rx="20.33"/>
+                                <text class="clss-12" transform="translate(66.97 330.85)">수업을 위해 지출하는 비용</text>
+                                <g class="clss-2">
+                                  <text id = "centercost" class="clss-19" transform="translate(74.86 369.81)">10,000~30,000</text>
+                                  <text class="clss-20" transform="translate(215.46 367.96)">원</text>
+                                </g>
+                                <text class="clss-12" transform="translate(120.38 422.44)">지출 사유</text>
+                                <rect class="clss-21" x="53.35" y="436.97" width="14.94" height="14.94"/>
+                                <rect  class="clss-6" x="109.64" y="436.97" width="14.94" height="14.94"/>
+                                <rect class="clss-15" x="209.8" y="436.97" width="14.94" height="14.94"/>
+                                <text class="clss-22" transform="translate(71.24 448.59)">교재</text>
+                                <text class="clss-22" transform="translate(128.19 448.59)">실습/견학비</text>
+                                <text class="clss-22" transform="translate(227.15 448.59)">재료비</text>
+                                <rect id = "fi22" class="clss-21" x="37.86" y="461.02" width="92.29" height="19.61"/>
+                                <rect id = "se22"class="clss-6" x="98.86" y="461.02" width="92.29" height="19.61"/>
+                                <rect id = "th22"class="clss-15" x="189.86" y="461.02" width="92.29" height="19.61"/>
+                                <path id = "ctag22" transform ="translate(10.33,0)"class="clss-15" d="M56.94,618.64h67.12a12.64,12.64,0,0,1,12.63,12.63h0a12.64,12.64,0,0,1-12.63,12.64H56.94A12.64,12.64,0,0,1,44.3,631.27h0A12.64,12.64,0,0,1,56.94,618.64Z"/>
+                                <text class="clss-23" transform="translate(66.04 635.3)">#흥미로워요</text>
+                                <path id = "ctag66"transform ="translate(13.33,0)"class="clss-15" d="M161.07,618.64h79.64c8.28,0,15,5.66,15,12.63h0c0,7-6.71,12.64-15,12.64H161.07c-8.28,0-15-5.66-15-12.64h0C146.08,624.3,152.79,618.64,161.07,618.64Z"/>
+                                <text class="clss-23" transform="translate(167.82 635.3)">#억지로들었어요</text>
+                                <path id = "ctag33"transform ="translate(10.33,0)"class="clss-15" d="M42.91,549.77h79.75A12.64,12.64,0,0,1,130.3,562.4h0A12.64,12.64,0,0,1,117.66,575H37.91A12.64,12.64,0,0,1,25.27,562.4h0A12.64,12.64,0,0,1,37.91,549.77Z"/>
+                                <text class="clss-23" transform="translate(45.01 566.43)">#달달한 꿀 교양</text>
+                                <path id = "ctag55" transform ="translate(13.33,0)"class="clss-15" d="M150.64,549.77h112.2c6.56,0,11.89,5.66,11.89,12.63h0c0,7-5.33,12.64-11.89,12.64H150.64c-6.57,0-11.89-5.66-11.89-12.64h0C138.75,555.43,144.07,549.77,150.64,549.77Z"/>
+                                <text class="clss-23" transform="translate(163.34 566.43)">#들었는데안들었어요</text>
+                                <path id = "ctag11" transform ="translate(7.33,0)"class="clss-15" d="M76.56,584.21H223.44a12.63,12.63,0,0,1,12.63,12.63h0a12.63,12.63,0,0,1-12.63,12.63H76.56a12.63,12.63,0,0,1-12.63-12.63h0A12.63,12.63,0,0,1,76.56,584.21Z"/>
+                                <text class="clss-23" transform="translate(78.2 600.87)">#강의는수면제성적은황천길</text>
+                                <path id = "ctag44" transform ="translate(-42.28,34)"class="clss-15" d="M161.07,618.64h79.64c8.28,0,15,5.66,15,12.63h0c0,7-6.71,12.64-15,12.64H161.07c-8.28,0-15-5.66-15-12.64h0C146.08,624.3,152.79,618.64,161.07,618.64Z"/>
+                                <text class="clss-23" transform="translate(117.82 669.3)">#암기가많아요</text>
+                                <text class="clss-24" transform="translate(119.52 532.64)">Best <tspan class="clss-25" x="29.54" y="0">T</tspan>
+                                  <tspan class="clss-26" x="37.48" y="0">ag</tspan></text>
+                                </g>
+                              </g>
+                            </svg>
+
+
+                  </div>
+
+
+                  <div class="lg:w-2/4 bg-indigo-600 text-white flex flex-col">
+                    <div class="p-4 bg-indigo-700  items-center">
+                      <div id = "profside">
+
+                      </div>
+                    </div>
+
+                    <div class="p-8 flex flex-1 items-start" style = "width: 3000px;">
+                    <div id = "card1"  href="#popup1" class="card button33" style = "height: 90%">
+                      <div class="button-backgrounds">
+                          <div class="button-circle button-circle1"></div>
+                          <div class="button-circle button-circle2"></div>
+                          <div class="button-circle button-circle3"></div>
+                          <div class="button-circle button-circle4"></div>
+                        </div>
+                      <div class="mails">
+                        <div id = "1A" class="mail-names">과목을 선택해 주세요</div>
+                      </div>
+
+
+                       <div id = "1B" class="Stars" style="--rating: 5;">
+                       </div>
+                       <div>
+                       </div>
+                       <div class="bottom-info">
+                         <div class="check1">
+                           <label class="checkbox">
+                     <input type="checkbox"/>
+                     </label>
+
+                         </div>
+                         <div  id = "1R" style = "font-size : 0.1px; color : #fff"></div>
+                         <div id = "1C" class="date"></div>
+                       </div>
+                     </div>
+
+                     <div id = "card2" class="card" style = "margin-left: 1%; height: 90%">
+                        <div class="mails">
+
+                          <div id = "2A" class="mail-names">
+                            과목을 선택해 주세요
+                          </div>
+                        </div>
+                        <div id = "2B" class="Stars" style="--rating: 3;">
+                        </div>
+                        <div>
+                        </div>
+                        <div class="bottom-info">
+                          <div class="check1">
+                            <label class="checkbox">
+                      <input type="checkbox"/>
+                      </label>
+                            <div class="star">
+
+                            </div>
+                            <div class="star">
+
+                            </div>
+
+                          </div>
+                          <div  id = "2R" style = "font-size : 0.1px; color : #fff"></div>
+                          <div id = "2C" class="date"></div>
+                        </div>
+                      </div>
+
+
+
+                     </div>
+
+                     <div class="p-8 flex flex-1 items-start" style = "width: 3000px; height : 90%;">
+                    <div id = "card3" class="card2"style = "height: 90%; margin-top:-2%;">
+                      <div class="mails">
+
+                        <div id = "3A" class="mail-names">
+
+                        </div>
+                      </div>
+                      <div id = "3B" class="Stars" style="--rating: 3;">
+                      </div>
+                      <div>
+                      </div>
+                      <div class="bottom-info">
+                        <div class="check1">
+                          <label class="checkbox">
+                    <input type="checkbox"/>
+                    </label>
+                          <div class="star">
+
+                          </div>
+                          <div class="star">
+
+                          </div>
+
+                        </div>
+                        <div  id = "3R" style = "font-size : 0.1px; color : #fff"></div>
+                        <div id = "3C" style = "color:grey;"class="date"></div>
+                      </div>
+                    </div>
+
+
+                    <div id = "card4" class="card2"style = "margin-left: 1%;height: 90%; margin-top:-2%;">
+                       <div class="mails">
+
+                         <div id = "4A" class="mail-names">
+
+                         </div>
+                       </div>
+                       <div id = "4B" class="Stars" style="--rating: 3;">
+                       </div>
+                       <div>
+                       </div>
+                       <div class="bottom-info">
+                         <div class="check1">
+                           <label class="checkbox">
+                     <input type="checkbox"/>
+                     </label>
+                           <div class="star">
+
+                           </div>
+                           <div class="star">
+
+                           </div>
+
+                         </div>
+                         <div  id = "4R" style = "font-size : 0.1px; color : #fff"></div>
+                         <div id = "4C" style = "color:grey;"class="date"></div>
+                       </div>
+                     </div>
+
+
+                      <button style="background-color:#f9cd5f;
+                      width:120px; height:19.5%; top:80%; left:-7.6rem;"
+                      class="bg-indigo-500 text-white py-2 text-sm px-3 rounded focus:outline-none" onclick="location.href = 'ec.html'">
+                        <h3 style="color:#000000; font-weight: 800; " >강의 후기 작성</h3></button>
+                        <!-- <div class="p-4 flex " style = "width: 3000px;"> -->
+                          <div class="frame1">
+
+
+
+                            <div style = "top :-300px; left: -400px;" class="wrapper2">
+                              <div class="popup" style="right:40%;">
+                                
+                                  <div class="popup-inside">
+                                  
+                                      <div class="backgrounds">
+                                        
+                                          <div class="background"></div>
+                                          <div class="background background2"></div>
+                                          <div class="background background3"></div>
+                                          <div class="background background4"></div>
+                                          <div class="background background5"></div>
+                                          <div class="background background6"></div>
+                                      </div>
+                                  </div>
+                                  <div class="content" id = "testside" style="height:100%;">
+                                    
+                                    
+                                      <div class="content-wrapper" >
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        
+    
+                                        <div>
+                                          <button id="close1" style="color:black; margin-right:30px;" onclick= "close1();">
+                                            ◁ 이전
+                                          </button>
+                                          <div style = "float:right;width:84%;" id = "popavg" class=" Stars2" style="--rating: 5;"> </div>
+                                            <ul style = "float:right;width:16%; position: relative; top:40px"  class = "ull">
+                                            <li>
+                                              <span>학점</span>
+                                            </li>
+                                            <li id = "creditrr"class="name">
+                                              3
+                                            </li>
+                                            <li>
+                                              <a href="#" title='이시국앱'></a>
+                                            </li>
+                                          </ul>
+                                      </div>
+    
+    
+                                        <svg xmlns="http://www.w3.org/2000/svg" id="레이어_1" data-name="레이어 1" viewBox="0 0 800.01 446.27">
+                        <defs><style>.cls-1,.cls-11,.cls-16{fill:#fff;}.cls-2{fill:#f2f2f2;}
+                        .cls-3{fill:#f2f6fd;}.cls-4{fill:#f9cd5f;}
+                        .cls-5{font-weight: 900;font-size:30px;}.cls-25{width: 100px;z-index: 33;}
+                        .cls-10,.cls-11,.cls-12,.cls-13,.cls-16,.cls-17,.cls-20,.cls-5,.cls-6,.cls-7
+                        {font-family:NanumSquareOTFB-KSCpc-EUC-H, NanumSquareOTF;}
+                        .cls-10
+                        {
+                          font-size:23px;font-weight:800;
+                        }
+                        .cls-11,.cls-17,.cls-6,.cls-8
+                        {font-size:19px;font-weight:800;}.cls-15,.cls-20,.cls-6,.cls-7
+                          {fill:gray;}.cls-16,.cls-7{font-size:17px;}
+                          .cls-12,.cls-13,.cls-17,.cls-8{
+                            fill:#3e4684;}
+                            .cls-9{
+                              fill:#3e4684;}
+                            .cls-8{font-family:NanumSquareOTFEB-KSCpc-EUC-H, NanumSquareOTF;letter-spacing:-0.02em;}
+                            .cls-12
+                            {font-size:22px;font-weight: 800;}
+                            .cls-13{align-content: right;font-size:24.61px;font-weight: 800;}
+                            .cls-14{font-family:NanumSquareOTFL-KSCpc-EUC-H, NanumSquareOTF;
+                            }.cls-18{letter-spacing:-0.05em;}.cls-19{letter-spacing:-0.02em;}.cls-20{
+                              font-size:13px;letter-spacing:-0.02em;}
+    
+                            </style></defs><title>화면2</title>
+                            <rect class="cls-1" width="800" height="355">
+                            </rect>
+                            <rect class="cls-3" x="1.01" y="208.23" width="799" height="140.77"/>
+                            <rect class="cls-2" x="28.01" y="10.23" width="88" height="38" rx="17.72"/>
+    
+                            <text id = 'poplecture' class="cls-5" transform="translate(196.87 39.38)">SF문학과 과학적 상상력 :: 전지니</text>
+                            <!-- <text/><text class="cls-6" transform="translate(365.81 425.08)">강의후기</text> -->
+                            <text id = "seye" class="cls-6" transform="translate(30.01 194.08)">2020년 1학기</text>
+                            <text class="cls-7" transform="translate(102.91 305.46)">수업을 위해 지출하는 비용</text>
+                            <text class="cls-7" transform="translate(410.59 305.46)">지출 사유</text>
+                            <text id = "area1"class="cls-8" transform="translate(48.21 36.08)">1영역</text>
+                            <text class="cls-7" transform="translate(255.91 251.72)">발표</text>
+                            <text class="cls-7" transform="translate(102.38 251.72)">팀플</text>
+                            <text class="cls-7" transform="translate(410.05 251.72)">과제</text>
+                            <text class="cls-7" transform="translate(615.83 251.72)">소통</text>
+                            <rect class="cls-1" x="148.21" y="220.96" width="74.66" height="45.95" rx="22.97"/>
+                            <rect class="cls-1" x="301.47" y="220.96" width="74.66" height="45.95" rx="22.97"/>
+                            <rect id = "hakwid" class="cls-9" x="456.72" y="222.36" width="101.74" height="45.95" rx="22.97"/>
+                            <text id = "popteam" class="cls-10" transform="translate(178.49 252.47)">O</text>
+                            <text id = "announce" class="cls-10" transform="translate(332.43 252.47)">X</text>
+                            <text id = "asic" class="cls-11" transform="translate(467.09 252.47)">주 1~2회</text>
+                            <text id="commun" class="cls-12" transform="translate(664.2 253.75)">빠름</text>
+                            <text id = "moneyc" class="cls-13" transform="translate(106.06 340.14)">10,000~30,000
+                            </text>
+                            <rect class="cls-15" x="519.71" y="301.65" width="13.13" height="13.13"/>
+                            <rect class="cls-4" x="569.18" y="301.65" width="13.13" height="13.13"/>
+                            <rect class="cls-9" x="657.2" y="301.65" width="13.13" height="13.13"/>
+                            <rect id = "tag33"class="cls-2" x="128.62" y="81.23" width="100" height="32" rx="16"/>
+                            <text class="cls-16" transform="translate(143.49 102.33)">#꿀교양</text>
+                            <rect id = "tag55"class="cls-2" x="251.32" y="81.23" width="195" height="32" rx="16"/>
+                            <text class="cls-16" transform="translate(269.8 102.33)">#들었는데안들었어요</text>
+                            <rect id = "tag11" class="cls-2" x="469.01" y="81.23" width="230" height="32" rx="16"/>
+                            <text class="cls-16" transform="translate(479.49 102.33)">#강의는수면제성적은황천길</text>
+                            <rect id = "tag22"class="cls-2" x="128.62" y="121.23" width="105" height="32" rx="16"/>
+                            <text class="cls-16" transform="translate(143.49 142.33)">#흥미로움</text>
+                            <rect id = "tag66"class="cls-2" x="266.32" y="121.23" width="145" height="32" rx="16"/>
+                            <text class="cls-16" transform="translate(288.8 142.33)">#억지로 들음</text>
+                            <rect id = "tag44" class="cls-2" x="439.01" y="121.23" width="160" height="32" rx="16"/>
+                            <text class="cls-16" transform="translate(459.49 142.33)">#암기가 많아요</text>
+                            <path class="cls-1" d="M301.47,356.4"/>
+                            <text class="cls-17" transform="translate(47.01 132.28)">
+                              <tspan class="cls-18">T</tspan>
+                              <tspan class="cls-19" x="10.42" y="0">A</tspan>
+                              <tspan x="23.56" y="0">G</tspan>
+                            </text>
+                            <text class="cls-20" transform="translate(535.43 311.87)">교재</text>
+                            <text class="cls-20" transform="translate(585.48 311.87)">실습/견학비</text>
+                            <text class="cls-20" transform="translate(672.45 311.87)">재료비</text>
+                            <rect id="fi" class="cls-15" x="410.23" y="322.79" width="107.48" height="17.23"/>
+                            <rect id="se" class="cls-4" x="440.59" y="322.79" width="218.66" height="17.23"/>
+                            <rect id="th" class="cls-9" x="703.14" y="322.79" width="1" height="17.23"/>
+                          </svg>
+                          <div style = 
+                          "overflow:auto;
+                          width: 770px; 
+                          height: 190px;
+                          word-break:break-all;
+                          color: black;
+                          background:#f2f2f2; 
+                          margin-top:-50px;
+                          margin-left:-34px;"
+                          >
+                              <span id="contentc" style =
+                                    "display:table-cell;
+                                    vertical-align:middle;
+                                    text-align: center; 
+                                    width:750px;
+                                    height:150px;
+                                    resize: none;
+                                    
+                                    padding-top: 18px;
+                                    padding-bottom: 18px;
+                                    padding-left: 28px;
+                                    padding-right: 21px;">
+                            </span>
+                          </div>
+    
+    
+    
+    
+    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <a id = "bbutton" class="frame1 btn1" >
+                              <i  class="fas fa-angle-left" ></i>
+                            </a>
+                            <p></p>
+                            <a id ="pgnum"  class="frame1 btn1">
+                              1/1
+                            </a>
+                            <p></p>
+                            <a id = "fbutton" class="frame1 btn1"> <!--  style="margin-left:93px;" -->
+                              <i class="fas fa-angle-right" ></i>
+                            </a>
+
+                          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          </div>
+                        </div>
+                       </div>
+                     </div>
+                    </div>
+
+                    <!-- <div class="fixed h-screen right-0 top-0 items-center flex">
+                     <div class="p-2 bg-white border-l-4 border-t-4 border-b-4 border-indigo-400 inline-flex items-center rounded-tl-lg shadow-2xl rounded-bl-lg z-10 flex-col">
+                       <button class="bg-gray-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="gray"></button>
+                       <button class="bg-red-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="red"></button>
+                       <button class="bg-orange-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="orange"></button>
+                       <button class="bg-green-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="green"></button>
+                       <button class="bg-teal-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="teal"></button>
+                       <button class="bg-blue-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="blue"></button>
+                       <button class="bg-indigo-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="indigo"></button>
+                       <button class="bg-purple-500 w-5 h-5 rounded-full mb-2 outline-none focus:outline-none" theme-button="purple"></button>
+                       <button class="bg-pink-500 w-5 h-5 rounded-full outline-none focus:outline-none" theme-button="pink"></button>
+                     </div>
+                    </div> -->
+                    <!-- <div class="frame" style="width:700px; height:585px; margin-top:217px; margin-left:-65px; margin-right:13px;
+                    border-radius:12px">
+                      learn-more overflow-auto flex-grow
+
+
+                    </div> -->
+
+
+
+               </div>
+            </div>
+      </div>
+
+      <!-- Scripts -->
+      <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase.js"></script>
+       <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.scrolly.min.js"></script>
+         <script src="assets/js/jquery.dropotron.min.js"></script>
+         <script src="assets/js/jquery.scrollex.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+         <script src="assets/js/emm.js"></script>
+         <script src="assets/js/login_func.js"></script>
+         <!-- 공지사항 -->
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+         <script src="https://use.fontawesome.com/3b601d7d53.js"></script>
+         <script  src="assets/js/script1.js"></script>
+         <script  src="assets/js/script_main.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+
+
+         <script  src="assets/js/script_em_board.js"></script>
+
+   </body>
+</html>

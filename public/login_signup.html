@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인 | 이시국앱</title>
+  <link rel="stylesheet" href="assets/css/loginstyle.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+  <style>
+    @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+  </style>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
+  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:300,400' rel='stylesheet' type='text/css'> -->
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div id="login_div" class="main-div">
+  <div id="output">
+    <div id="fback">
+      <div class="kayitback"></div>
+      <div class="girisback"></div>
+    </div>
+
+
+    <div id="textbox">
+      <div class="toplam">
+
+        <div class="right">
+          <div id="ic">
+              <h2 style="color:#3e4685"><b>로그인</b></h2>
+              <p style="color:#000">반갑습니다. 이시국앱입니다.</p>
+              <!-- id="girisyap" id="sidebar-user-login" -->
+
+                <form class="girisyap girisbtn" name="login-form" method="post" onsubmit="return false" action="login.html" >
+
+                  <div class="form-group">
+                    <label class="control-label" for="inputNormal">아이디</label>
+                    <input type="email" name="log" class="bp-suggestions form-control" cols="50" rows="10"
+                    placeholder="학교 웹메일" id="userId" value="@hknu.ac.kr"></input>
+                  </div>
+                  <div class="form-group soninpt">
+                    <label class="control-label" for="inputNormal">비밀번호</label>
+                    <input type="password" name="pwd" class="bp-suggestions form-control" cols="50" rows="10"
+                    placeholder="새로운 비밀번호" id="password_field"></input>
+                  </div>
+                  <div>
+                    <input type="submit" value="로그인" class="girisbtn" onClick="login();" tabindex="100"></input>
+                  </div>
+
+              </form>
+
+                <button id="moveleft" style="color:#3e4685">회원가입</button>
+
+          </div>
+        </div>
+
+
+            <div class=left style="overflow:auto";>
+              <div id="ic">
+                  <h2 style="color:#e1eff5"><b>회원가입</b></h2>
+                  <p>한경대학교 웹메일로부터 인증을 <br>받은 후에 회원이 될 수 있습니다.</p>
+                  <form class="girisyap girisbtn1" method="post" onsubmit="return false" action="login_signup.html">
+
+                    <!-- id="girisyap" name="signup_form" id="signup_form" -->
+
+                        <div class="form-group">
+                          <label class="control-label" for="inputNormal">학교 웹메일</label>
+                          <input type="email" id="userId1"
+                          class="bp-suggestions form-control" cols="50" rows="10"></input>
+                        </div>
+
+                        <div class="form-group" >
+                          <label class="control-label" for="inputNormal">비밀번호</label>
+                          <input type="password" id="password_field1"
+                          placeholder="문자 + 숫자 포함 6자리 이상 " class="bp-suggestions form-control" cols="50" rows="10" ></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="inputNormal">비밀번호 확인</label>
+                          <input type="password" id="password_field1_check"
+                          placeholder="다시 한 번 입력해 주세요" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+                        </div>
+
+                        <div class="yarim form-group">
+                          <label class="control-label" for="inputNormal">성함</label>
+                          <input type="text" id="userName" class="bp-suggestions form-control" cols="50" rows="10" ></input>
+                        </div>
+
+                        <div class="yarim sn form-group">
+                          <label class="control-label" for="inputNormal">학번</label>
+                          <input type="text" id="studentId" class="bp-suggestions form-control" cols="50" rows="10"></input>
+                        </div>
+
+
+                        <div class="form-group" style="width: 250px;">
+                          <label class="control-label" for="inputNormal">휴대전화번호</label>
+                          <input type="text" id="phonenumber" class="bp-suggestions form-control" cols="50" rows="10"
+                          placeholder="EX) 01012345678"></input>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="control-label" for="inputNormal"></label>
+
+                            <select class="select-box" type="text" id="department" >
+                              <option value="none">학부를 선택해 주세요.</option>
+                              <option value="인문융합공공인재학부">인문융합공공인재학부</option>
+                              <option value="법경영학부">법경영학부</option>
+                              <option value="웰니스산업융합학부">웰니스산업융합학부</option>
+                              <option value="응용자원환경학부">응용자원환경학부</option>
+                              <option value="동물생명융합학부">동물생명융합학부</option>
+                              <option value="생명공학부">생명공학부</option>
+                              <option value="건설환경공학부">건설환경공학부</option>
+                              <option value="사회안전시스템공학부">사회안전시스템공학부</option>
+                              <option value="식품생명화학공학부">식품생명화학공학부</option>
+                              <option value="컴퓨터응용수학부">컴퓨터응용수학부</option>
+                              <option value="ICT로봇기계공학부">ICT로봇기계공학부</option>
+                              <option value="전자전기공학부">전자전기공학부</option>
+                              <option value="디자인건축융합학부">디자인건축융합학부</option>
+                            </select>
+
+                        </div>
+                        <!-- <input type="submit" value="회원가입" class="girisbtn1" onClick="create_account()" tabindex="100"></input> -->
+                        <!-- <input type="submit" value="로그인" class="girisbtn" onClick="login()" tabindex="100"></input> -->
+
+                            <button class="girisbtn1" type="submit" value="회원가입" onClick="create_account()" tabindex="100">
+                              회원가입
+                            </button>
+
+                  </form>
+                          <!-- <div id="user_div" class="loggedin-div">
+                            <h3>Welcome User</h3>
+                            <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+                            <button onclick="logout()">Logout</button>
+                            <button onClick="send_verification()">인증메일받기</button>s
+                          </div> -->
+
+
+
+                    <button id="moveright" style="color:#e1eff5">로그인</button>
+
+                </div>
+                <!-- <button class="girisbtn1" onclick="create_account();"> 회원가입</button> -->
+            </div>
+
+            <div id="user_div" class="loggedin-div">
+              <h3>Welcome User</h3>
+              <p id="user_para">Welcome Example. You're currently logged in.</p>
+              <button onclick="logout()">Logout</button>
+              <button onClick="send_verification()">인증메일받기</button>
+              <div id="save">가입 완료</div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBeTkS1nPcbkqlMSCJpFukdjLco3Vghh14",
+    authDomain: "hk-liberal-arts-comments.firebaseapp.com",
+    projectId: "hk-liberal-arts-comments",
+
+    storageBucket: "hk-liberal-arts-comments.appspot.com",
+    messagingSenderId: "18425169280",
+    appId: "1:18425169280:web:e153ac2694890e0891ad65",
+    measurementId: "G-YB7EWF6108"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="assets/js/login_func.js"></script>
+  <script src="assets/js/login_design.js"></script>
+
+
+</body>
+</html>

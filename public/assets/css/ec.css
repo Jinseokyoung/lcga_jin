@@ -1,0 +1,286 @@
+
+body {
+  background-color: #d3e4ed;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  min-width: 285px;
+  min-height: 100vh;
+}
+main {
+  flex: 1 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+header {
+
+  height: 15em;
+  opacity: 0.7; /* opacity to help smooth out jpeg artifacts */
+  padding-top: 2.5em;
+}
+@media (max-width: 599px) {
+  header {
+    background-position: bottom center;
+  }
+}
+.small {
+  font-size: 14px;
+}
+a {
+  color: #0277bd;
+}
+a:hover {
+  text-decoration: underline;
+}
+h5 {
+  font-size: 1.3em;
+}
+label {
+  color: #333;
+}
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.rating .stars {
+  margin-right: 15px;
+}
+
+.rating .stars .star {
+  float: left;
+  padding: 5px 2px;
+  cursor: pointer;
+}
+
+.rating .stars .star:before {
+  font-family: "FontAwesome";
+  content: "\f005";
+  color: #d0e8f0;
+  font-size: 3em;
+}
+
+.rating .stars .star:hover:before,
+.rating .stars .star.to_rate:before,
+.rating .stars .star.rated:before {
+  color: #3E4685;
+}
+
+.rating .stars .star.no_to_rate:before {
+  color: #d0e8f0;
+}
+.bottom {
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.bottom a {
+  color: rgba(0, 0, 0, 0.4);
+  transition: .27s;
+}
+.bottom a:hover {
+  color: #C25068;
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 450px;
+}
+
+.slider-container {
+  width: 100%;
+}
+
+#range {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  top: 50px;
+  opacity: 0;
+}
+#range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 50px;
+  background: black;
+  cursor: pointer;
+}
+#range::-moz-range-thumb {
+  width: 40px;
+  height: 50px;
+  background: #ccc;
+  cursor: pointer;
+}
+
+#value {
+  font-family: sans-serif;
+  color: #1c1c1c;
+}
+
+svg {
+  max-width: 600px;
+  margin-top: 40px;
+}
+
+svg .gooey {
+  filter: url("#goo");
+}
+
+svg .drop, svg .dropTop, svg .drops {
+  opacity: 0;
+}
+
+svg .toggler {
+  cursor: pointer;
+}
+
+#boom {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  opacity: 0;
+}
+#boom + div:before {
+  content: "unchecked";
+  color: rgba(0, 0, 0, 0.4);
+}
+#boom:checked + div:before {
+  content: 'checked';
+}
+.bottom {
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+.bottom a {
+  color: rgba(0, 0, 0, 0.4);
+  transition: .27s;
+}
+.bottom a:hover {
+  color: #C25068;
+}
+
+
+svg .gooey2 {
+  filter: url("#goo2");
+}
+
+svg .drop2, svg .dropTop2, svg .drops2 {
+  opacity: 0;
+}
+
+svg .toggler2 {
+  cursor: pointer;
+}
+
+#boom2 {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  opacity: 0;
+}
+#boom2 + div:before {
+  content: "unchecked";
+  color: rgba(0, 0, 0, 0.4);
+}
+#boom2:checked + div:before {
+  content: 'checked';
+}
+
+/* prevent input zoom on mobile */
+input[type="text"],
+input[type="number"],
+textarea {
+  font-size: 16px;
+}
+section {
+  margin: 50px auto;
+}
+.hr-custom {
+  border-top: solid 5px;
+  max-width: 85%;
+  margin: 40px auto 60px auto;
+  text-align: center;
+}
+.hr-custom:after {
+  background-color: #fff;
+  content: "\e8cd";
+  font-family: "Material Icons";
+  font-size: 2.5em;
+  padding: 0 0.25em;
+  position: relative;
+  top: -0.8em;
+}
+.survey-title {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: -11em;
+  top: -12em;
+}
+@media (max-width: 599px) {
+  .survey-title {
+    margin-bottom: -8em;
+    top: -9em;
+  }
+}
+@media (max-width: 500px) {
+  .survey-title {
+    margin-bottom: -6em;
+    top: -7em;
+  }
+}
+.logo {
+  margin-bottom: 0;
+}
+.form {
+  background-color: white;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 2em;
+  margin-bottom: 5em;
+  width: 90%;
+
+}
+.radio-label {
+  margin-bottom: 0.25em;
+  padding-right: 0.7em;
+}
+@media (min-width: 401px) and (max-width: 499px) {
+  .radio-label {
+    padding-right: 0.3em;
+  }
+}
+@media (max-width: 400px) {
+  .radio-label {
+    padding-right: 0;
+  }
+}
+.radio-button {
+  padding-top: 0.5em;
+}
+.day-label {
+  font-size: 0.8em;
+  font-weight: bold;
+  height: 33px;
+}
+.time-label {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.meetup-times .row {
+  border-bottom: 1px solid #eee;
+}

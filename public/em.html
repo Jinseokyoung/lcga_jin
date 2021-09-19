@@ -1,0 +1,371 @@
+if (_formKeyValue.currentState.validate()) {
+	int rating = 0;
+	int count = 0;
+	List<int> tagsCount = [0, 0, 0, 0, 0, 0];
+	List<int> expenditureCount = [0, 0, 0];
+	double avgRating = 0.0;
+	double avgCost = 0.0;
+	double avgAssignment = 0.0;
+	double avgCommunication = 0.0;
+	DateTime date = DateTime.now();
+	var commentList = {};
+
+	for (bool a in _starSelections) {
+	  if (a == true) rating++;
+	}
+	
+	if (snapshot != null) { // 업데이트
+	  FirebaseFirestore.instance
+		  .collection('elective')
+		  .doc(selectedLecture + selectedProfessor)
+		  .get()
+		  .then((value) => {
+				count = value['count'],
+				avgRating = value['avg_rating'],
+				avgCost = value['avg_cost'],
+				avgAssignment =
+					value['avg_assignment'],
+				avgCommunication =
+					value['avg_communication'],
+				for (int i = 0;
+					i < _tags.length;
+					i++)
+				  {
+					if (_tags[i])
+					  {
+						tagsCount[i] = value['tag' +
+								(i + 1).toString() +
+								'_count'] +
+							1,
+					  }
+					else
+					  {
+						tagsCount[i] = value['tag' +
+							(i + 1).toString() +
+							'_count'],
+					  },
+					if (snapshot[
+						'tag' + (i + 1).toString()])
+					  {tagsCount[i] -= 1}
+				  },
+				for (int i = 0;
+					i <
+						_expenditureSelections
+							.length;
+					i++)
+				  {
+					if (_expenditureSelections[i])
+					  {
+						expenditureCount[i] =
+							value['expenditureCount']
+									[i] +
+								1
+					  }
+					else
+					  {
+						expenditureCount[i] = value[
+							'expenditureCount'][i]
+					  },
+					if (snapshot['expenditure'][i])
+					  {expenditureCount[i] -= 1}
+				  }
+			  })
+		  .whenComplete(() => {
+				FirebaseFirestore.instance
+					.collection('elective')
+					.doc(selectedLecture +
+						selectedProfessor)
+					.update({
+				  'lecture': selectedLecture,
+				  'professor': selectedProfessor,
+				  'avg_rating': (count * avgRating +
+						  rating -
+						  snapshot['rating']) /
+					  count,
+				  'content': content,
+				  'area': selectedArea,
+				  'credit': selectedCredit,
+				  'tag1_count': tagsCount[0],
+				  'tag2_count': tagsCount[1],
+				  'tag3_count': tagsCount[2],
+				  'tag4_count': tagsCount[3],
+				  'tag5_count': tagsCount[4],
+				  'tag6_count': tagsCount[5],
+				  'expenditureCount':
+					  expenditureCount,
+				  'avg_cost': (count * avgCost +
+						  cost -
+						  snapshot['cost']) /
+					  (count),
+				  'avg_assignment': (count *
+							  avgAssignment +
+						  assignment -
+						  snapshot['assignment']) /
+					  (count),
+				  'avg_communication': (count *
+							  avgCommunication +
+						  communication -
+						  snapshot[
+							  'communication']) /
+					  count,
+				}).whenComplete(() => {
+						  FirebaseFirestore.instance
+							  .collection(
+								  'elective')
+							  .doc(selectedLecture +
+								  selectedProfessor)
+							  .collection(
+								  'information')
+							  .doc(snapshot.id)
+							  .update({
+							'area': selectedArea,
+							'lecture':
+								selectedLecture,
+							'professor':
+								selectedProfessor,
+							'credit':
+								selectedCredit,
+							'year': selectedYear,
+							'semester':
+								selectedSemester,
+							'team_project':
+								_selections[0],
+							'announcement':
+								_announcementSelections[
+									0],
+							'content': content,
+							'expenditure':
+								_expenditureSelections,
+							'rating': rating,
+							'assignment':
+								assignment,
+							'communication':
+								communication,
+							'cost': cost,
+							'tag1': _tags[0],
+							'tag2': _tags[1],
+							'tag3': _tags[2],
+							'tag4': _tags[3],
+							'tag5': _tags[4],
+							'tag6': _tags[5],
+						  }).whenComplete(() => setState(() {
+							Navigator.pushReplacementNamed(context, "/home");
+						  }))
+						})
+			  });
+	} else { // 새로 추가되는 부분
+	  FirebaseFirestore.instance // 후기 존재 여부 확인
+		  .collection('elective')
+		  .doc(selectedLecture + selectedProfessor)
+		  .get()
+		  .then((value) => { //평균을 내거나 데이터들을 정리 및 준비
+				if (value.exists) //후기 존재 시
+				  { //새로 추가햇을 때 평균을 다시 매기기 위함
+					count = value['count'],
+					avgRating = value['avg_rating'],
+					avgAssignment =
+						value['avg_assignment'],
+					avgCost = value['avg_cost'],
+					avgCommunication =
+						value['avg_communication'],
+					for (int i = 0;
+						i < _tags.length;
+						i++)
+					  {
+						if (_tags[i])
+						  {
+							tagsCount[
+								i] = value['tag' +
+									(i + 1)
+										.toString() +
+									'_count'] +
+								1,
+						  }
+						else
+						  {
+							tagsCount[i] = value[
+								'tag' +
+									(i + 1)
+										.toString() +
+									'_count'],
+						  },
+					  },
+					for (int i = 0;
+						i <
+							_expenditureSelections
+								.length;
+						i++)
+					  {
+						if (_expenditureSelections[
+							i])
+						  {
+							expenditureCount[i] =
+								value['expenditureCount']
+										[i] +
+									1
+						  }
+						else
+						  {
+							expenditureCount[
+								i] = value[
+									'expenditureCount']
+								[i]
+						  },
+					  }
+				  }
+				else // 새로운 글 일 때
+				  {
+					for (int i = 0;
+						i < _tags.length;
+						i++)
+					  {
+						if (_tags[i])
+						  {
+							tagsCount[i] += 1,
+						  }
+					  },
+					for (int i = 0;
+						i <
+							_expenditureSelections
+								.length;
+						i++)
+					  {
+						if (_expenditureSelections[
+							i])
+						  {expenditureCount[i] += 1}
+					  }
+				  }
+			  })
+		  .whenComplete(() => { // 데이터 정리 성공적으로 끝나면 추가
+				FirebaseFirestore.instance
+					.collection('elective')
+					.doc(selectedLecture +
+						selectedProfessor)
+					.set({
+					  'lecture': selectedLecture,
+					  'professor':
+						  selectedProfessor,
+					  'date': date,
+					  'count': count + 1,
+					  'avg_rating':
+						  (count * avgRating +
+								  rating) /
+							  (count + 1),
+					  'content': content,
+					  'area': selectedArea,
+					  'credit': selectedCredit,
+					  'tag1_count': tagsCount[0],
+					  'tag2_count': tagsCount[1],
+					  'tag3_count': tagsCount[2],
+					  'tag4_count': tagsCount[3],
+					  'tag5_count': tagsCount[4],
+					  'tag6_count': tagsCount[5],
+					  'expenditureCount':
+						  expenditureCount,
+					  'team_project':
+						  _selections[0],
+					  'announcement':
+						  _announcementSelections[
+							  0],
+					  'avg_cost':
+						  (count * avgCost + cost) /
+							  (count + 1),
+					  'avg_assignment':
+						  (count * avgAssignment +
+								  assignment) /
+							  (count + 1),
+					  'avg_communication': (count *
+								  avgCommunication +
+							  communication) /
+						  (count + 1),
+					  'department': department,
+					}) // ----------------------------------
+					.whenComplete(() => { //데이터 넣는게 끝나면 information에 넣는 거
+						  FirebaseFirestore.instance
+							  .collection(
+								  'elective')
+							  .doc(selectedLecture +
+								  selectedProfessor)
+							  .collection(
+								  'information')
+							  .doc(date
+								  .millisecondsSinceEpoch
+								  .toString())
+							  .set({
+							'area': selectedArea,
+							'lecture':
+								selectedLecture,
+							'professor':
+								selectedProfessor,
+							'credit':
+								selectedCredit,
+							'year': selectedYear,
+							'semester':
+								selectedSemester,
+							'team_project':
+								_selections[0],
+							'announcement':
+								_announcementSelections[
+									0],
+							'expenditure':
+								_expenditureSelections,
+							'content': content,
+							'rating': rating,
+							'date': date,
+							'uid': FirebaseAuth
+								.instance
+								.currentUser
+								.uid,
+							'assignment':
+								assignment,
+							'communication':
+								communication,
+							'cost': cost,
+							'tag1': _tags[0],
+							'tag2': _tags[1],
+							'tag3': _tags[2],
+							'tag4': _tags[3],
+							'tag5': _tags[4],
+							'tag6': _tags[5],
+							'department': department
+						  })
+						})
+					.whenComplete(() => { // 넣는 거 끝나면 user에 '내가 쓴 후기'에 추가
+						  FirebaseFirestore.instance
+							  .collection('users')
+							  .doc(FirebaseAuth
+								  .instance
+								  .currentUser
+								  .uid)
+							  .get()
+							  .then((value) => { 
+									commentList =
+										value[
+											'comment'],
+									commentList[date
+											.millisecondsSinceEpoch
+											.toString()] =
+										selectedLecture +
+											selectedProfessor
+								  })
+							  .whenComplete(() => {
+									FirebaseFirestore
+										.instance
+										.collection(
+											'users')
+										.doc(FirebaseAuth
+											.instance
+											.currentUser
+											.uid)
+										.update({
+									  'comment':
+										  commentList
+									})
+								  }).whenComplete(() => setState(() {
+							Navigator.pushReplacementNamed(context, "/home");
+						  }))
+						})
+			  });
+	}
+
+  }

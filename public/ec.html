@@ -1,0 +1,580 @@
+<!DOCTYPE HTML>
+
+<!--
+   Landed by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko">
+   <head>
+      <title>강의 후기 작성 | 이시국앱</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+      <link rel="stylesheet" href="assets/css/ec.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
+              <script src="https://unpkg.com/nouislider@9.2.0/distribute/nouislider.js"></script>
+        <script src="https://unpkg.com/wnumb@1.1.0"></script>
+        <link href="https://unpkg.com/nouislider@9.2.0/distribute/nouislider.min.css" rel="stylesheet"/>
+
+      <link rel="stylesheet" href="assets/css/nouislider.css">
+     <link rel="stylesheet" href="assets/css/modern1.css">
+     <link rel="stylesheet" href="assets/css/ecformat.css">
+
+
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="google" content="notranslate">
+   <meta name="author" content="IslandJS">
+   <meta name="description" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta name="subject" content="JavaScript, Node.js, HTML5, CSS, Open Projects">
+   <meta name="rating" content="General">
+   <meta property="og:url" content="https://nodeschool.io/bainbridge">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta property="og:image" content="https://nodeschool.io/bainbridge/img/nodeschool-bi.png">
+   <meta property="og:description" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta property="og:site_name" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta property="og:locale" content="en_US">
+   <meta property="article:author" content="IslandJS">
+   <meta property="op:markup_version" content="v1.0">
+   <meta name="twitter:card" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta name="twitter:site" content="@island_js">
+   <meta name="twitter:creator" content="@island_js">
+   <meta name="twitter:url" content="https://nodeschool.io/bainbridge">
+   <meta name="twitter:title" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta name="twitter:description" content="IslandJS - NodeSchool and Open Projects on Bainbridge Island, Washington">
+   <meta name="twitter:image" content="https://nodeschool.io/bainbridge/img/nodeschool-bi.png">
+
+
+
+   <!-- <link href="https://nodeschool.io/bainbridge/css/materialize.min.css"  media="screen,projection" type="text/css" rel="stylesheet"> -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!--완성! send 버튼-->
+   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+      <style>
+         /* @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+       @import url(http://fonts.googleapis.com/earlyaccess/hanna.css); */
+       @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      </style>
+   </head>
+   <body style="font-family: NanumSquare;" > <!--ca61b4-->
+
+      <header></header>
+      <main>
+        <div style = "margin-left: 190px;width : 650px;">
+          <div class="survey-title card blue-grey darken-3 col s10 offset-s1 m6 offset-m3">
+            <div class="card-content grey-text text-lighten-3 center-align" style="background-color: #3E4685;">
+              <div class="row logo valign-wrapper">
+                <div class="col s6 offset-s3 m4 offset-m4">
+                  <img class="responsive-img" src="images/main.png" alt="" />
+                </div>
+              </div>
+              <div class="card-title"><h4>강의 후기 작성</h4></div>
+
+            </div>
+          </div>
+        </div>
+        <div class="container form" style="margin-top:-16em">
+          <form name="NodeSchool" enctype="application/json" action="#" method="POST">
+            <h5 class="center-align" style="margin:4rem 1.29rem 3rem 1.29rem   ">당신의 소중한 후기를 작성해주세요.</h5>
+
+             </p>
+            <hr class="hr-custom">
+            <section id="last-event">
+              <h5>영역 선택</h5>
+              <div class="row radio-labels center-align">
+                <div class="col s1 center-align">
+                  <div class="row radio-label">1</div>
+                  <div class="row lighten-4 radio-button">
+                    <input style = "background-color: white;" onclick="changeddud();" value="1영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-1" />
+                    <label for="enjoy-last-event-1"></label>
+                  </div>
+                </div>
+                <div class="col s1 center-align">
+                  <div class="row radio-label">2</div>
+                  <div class="row lighten-4 radio-button">
+                    <input onclick="changeddud();"  value="2영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-2" />
+                    <label for="enjoy-last-event-2"></label>
+                  </div>
+                </div>
+                <div class="col s1 center-align">
+                  <div class="row radio-label">3</div>
+                  <div class="row lighten-4 radio-button">
+                    <input onclick="changeddud();" value="3영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-3" />
+                    <label for="enjoy-last-event-3"></label>
+                  </div>
+                </div>
+                <div class="col s1 center-align">
+                  <div class="row radio-label">4</div>
+                  <div class="row lighten-4 radio-button">
+                    <input onclick="changeddud();" value="4영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-4" />
+                    <label for="enjoy-last-event-4"></label>
+                  </div>
+                </div>
+                     <div class="col s1 center-align">
+                  <div class="row radio-label">5</div>
+                  <div class="row lighten-4 radio-button">
+                    <input onclick="changeddud();" value="5영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-5" />
+                    <label for="enjoy-last-event-5"></label>
+                  </div>
+                </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">6</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="6영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-6" />
+                           <label for="enjoy-last-event-6"></label>
+                        </div>
+                     </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">7</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="7영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-7" />
+                           <label for="enjoy-last-event-7"></label>
+                        </div>
+                     </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">8</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="8영역" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-8" />
+                           <label for="enjoy-last-event-8"></label>
+                        </div>
+                     </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">글컬</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="글컬" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-9" />
+                           <label for="enjoy-last-event-9"></label>
+                        </div>
+                     </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">소양</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="소양" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-10" />
+                           <label for="enjoy-last-event-10"></label>
+                        </div>
+                     </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">융합</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="융합" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-11" />
+                           <label for="enjoy-last-event-11"></label>
+                        </div>
+                     </div>
+                     <div class="col s1 center-align">
+                        <div class="row radio-label">공통</div>
+                        <div class="row lighten-4 radio-button">
+                           <input onclick="changeddud();" value="공통과목" class="with-gap" name="enjoy-last-event" type="radio" id="enjoy-last-event-12" />
+                           <label for="enjoy-last-event-12"></label>
+                        </div>
+                     </div>
+
+              </div>
+            </section>
+            <section>
+              <h5>과목명</h5>
+              <div >
+                        <select  name="choice_prof" id="choice_prof" onchange = "changelecture(selectedIndex);">
+                          <option value="X">영역을 선택하세요</option>
+                        </select>
+              </div>
+            </section>
+
+            <section>
+              <h5>교수명</h5>
+              <div>
+
+                    <select  name="choice_prof2" id="choice_prof2"onchange = "changeprof(selectedIndex);" >
+                      <option value="X">과목을 선택하세요</option>
+                    </select>
+
+
+              </div>
+            </section>
+            <section>
+              <div class="input-field col s12">
+                <input id="hak" type="text" style = "font-size: 20px;"  readonly >
+              </div>
+
+                  <select  style = "float:left;flex:1;width:50%;" name="years" id="years" >
+                     <option value="X">년도를 선택하세요</option>
+                     <option value="2018">2018</option>
+                     <option value="2019">2019</option>
+                     <option value="2020">2020</option>
+                  </select>
+                  <select  style = "float:left;flex:1; width : 50%;"name="ki" id="ki" >
+                     <option value="X">학기를 선택하세요</option>
+                     <option value="1학기">1학기</option>
+                     <option value="2학기">2학기</option>
+                  </select>
+
+            </section>
+               <br>
+
+               <br>
+               <br>
+               <!-- <hr class="hr-custom"> -->
+            <section style = "float: left; width:300px;">
+              <h5>팀플</h5>
+                        <svg viewBox="0 0 800 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                 <defs>
+                   <filter id="goo">
+                     <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                     <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                     <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                   </filter>
+                   <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+
+                   </linearGradient>
+                 </defs>
+
+                 <g class="gooey" transform="translate(365.000000, 0.000000)" fill="#000000">
+                   <circle class="dropTop" r="10" cx="70" cy="12"></circle>
+
+                   <circle class="drop" r="40" cx="70" cy="70"></circle>
+                   <circle class="drops drop0" r="40" cx="70" cy="70"></circle>
+                   <circle class="drops drop1" r="40" cx="70" cy="70"></circle>
+                   <circle class="drops drop2" r="40" cx="70" cy="70"></circle>
+                   <circle class="drops drop3" r="40" cx="70" cy="70"></circle>
+                   <circle class="drops drop4" r="40" cx="70" cy="70"></circle>
+
+                   <path class="ring0" d="M70,140 C31.3400675,140 0,108.659932 0,70 C0,31.3400675 31.3400675,0 70,0 C108.659932,0 140,31.3400675 140,70 C140,108.659932 108.659932,140 70,140 Z M70,129.552239 C102.889793,129.552239 129.552239,102.889793 129.552239,70 C129.552239,37.1102067 102.889793,10.4477612 70,10.4477612 C37.1102067,10.4477612 10.4477612,37.1102067 10.4477612,70 C10.4477612,102.889793 37.1102067,129.552239 70,129.552239 Z" id="Combined-Shape"></path>
+                   <path class="ring" d="M70,140 C31.3400675,140 0,108.659932 0,70 C0,31.3400675 31.3400675,0 70,0 C108.659932,0 140,31.3400675 140,70 C140,108.659932 108.659932,140 70,140 Z M70,129.552239 C102.889793,129.552239 129.552239,102.889793 129.552239,70 C129.552239,37.1102067 102.889793,10.4477612 70,10.4477612 C37.1102067,10.4477612 10.4477612,37.1102067 10.4477612,70 C10.4477612,102.889793 37.1102067,129.552239 70,129.552239 Z" id="Combined-Shape"></path>
+                   <circle class="toggler" fill="rgba(255,255,255,0)" r="120" cx="70" cy="70"></circle>
+                     <p id = "teamcheck" style = "text-align : center; margin-left: 20px;">없음</p>
+                 </g>
+               </svg>
+                 <input style = "color:white;" tabindex="-1" id="boom" name="boom" type="checkbox">
+
+
+
+            </section>
+
+              <section style = "float:left; width:300px;">
+                  <h5>발표</h5>
+                        <svg viewBox="0 0 800 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                      <filter id="goo2">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                        <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo2"></feColorMatrix>
+                        <feBlend in="SourceGraphic" in2="goo2"></feBlend>
+                      </filter>
+                    <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-2">
+               <!-- </stop> -->
+                    </linearGradient>
+                  </defs>
+
+                  <g class="gooey2" transform="translate(365.000000, 0.000000)" fill="#000000">
+                     <circle class="dropTop2" r="10" cx="70" cy="12"></circle>
+
+                     <circle class="drop222" r="40" cx="70" cy="70"></circle>
+                     <circle class="drops2 drop02" r="40" cx="70" cy="70"></circle>
+                     <circle class="drops2 drop12" r="40" cx="70" cy="70"></circle>
+                     <circle class="drops2 drop22" r="40" cx="70" cy="70"></circle>
+                     <circle class="drops2 drop32" r="40" cx="70" cy="70"></circle>
+                     <circle class="drops2 drop42" r="40" cx="70" cy="70"></circle>
+
+                     <path class="ring02" d="M70,140 C31.3400675,140 0,108.659932 0,70 C0,31.3400675 31.3400675,0 70,0 C108.659932,0 140,31.3400675 140,70 C140,108.659932 108.659932,140 70,140 Z M70,129.552239 C102.889793,129.552239 129.552239,102.889793 129.552239,70 C129.552239,37.1102067 102.889793,10.4477612 70,10.4477612 C37.1102067,10.4477612 10.4477612,37.1102067 10.4477612,70 C10.4477612,102.889793 37.1102067,129.552239 70,129.552239 Z" id="Combined-Shape"></path>
+                     <path class="ring2" d="M70,140 C31.3400675,140 0,108.659932 0,70 C0,31.3400675 31.3400675,0 70,0 C108.659932,0 140,31.3400675 140,70 C140,108.659932 108.659932,140 70,140 Z M70,129.552239 C102.889793,129.552239 129.552239,102.889793 129.552239,70 C129.552239,37.1102067 102.889793,10.4477612 70,10.4477612 C37.1102067,10.4477612 10.4477612,37.1102067 10.4477612,70 C10.4477612,102.889793 37.1102067,129.552239 70,129.552239 Z" id="Combined-Shape"></path>
+                     <circle class="toggler2" fill="rgba(255,255,255,0)" r="120" cx="70" cy="70"></circle>
+                     <p id = "teamcheck2" style = "text-align : center; margin-left: 20px;">없음</p>
+                  </g>
+               </svg>
+                  <input style = "color:white; " tabindex="-1" id="boom2" name="boom2" type="checkbox">
+
+
+
+               </section>
+
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+                <section>
+              <div class="row">
+                <h5>과제</h5>
+              </div>
+              <div class="row radio-labels center-align">
+                <div  style = "margin-left: 110px;"class="col s1 center-align">
+                  <div class="row radio-label">없음</div>
+                     <br>
+                  <div class="row   lighten-4 radio-button">
+                    <input class="with-gap" name="positive-change" type="radio" id="positive-change-1" value="0" checked/>
+                    <label for="positive-change-1"></label>
+                  </div>
+                </div>
+                <div style = "margin-left: 80px;"class="col s1 center-align">
+                  <div class="row radio-label">학기 1~2회</div>
+                  <div class="row lighten-4 radio-button">
+                    <input style = "background-color: #ffffff;"class="with-gap" name="positive-change" type="radio" id="positive-change-2" value="1" />
+                    <label  for="positive-change-2"></label>
+                  </div>
+                </div>
+                <div style = "margin-left: 80px;" class="col s1 center-align">
+                  <div class="row radio-label">월 1~2회</div>
+                  <div class="row lighten-4 radio-button">
+                    <input class="with-gap" name="positive-change" type="radio" id="positive-change-3" value="2" />
+                    <label for="positive-change-3"></label>
+                  </div>
+                </div>
+                <div  style = "margin-left: 80px;"class="col s1 center-align">
+                  <div class="row radio-label">주 1~2회</div>
+                  <div class="row lighten-4 radio-button">
+                    <input class="with-gap" name="positive-change" type="radio" id="positive-change-4" value="3" />
+                    <label for="positive-change-4"></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="row">
+                <h5>비용</h5>
+                <div class="wrap">
+                  <div class="slider-container" style="height: 200px;">
+                    <input id="range" type="range" min="1" max="99">
+                    <svg id="slider" height="50" width="450">
+                      <circle id="thumb" stroke="#000" fill="#000" r="10" />
+                      <path id="curve" stroke="#000" stroke-width="4" fill="none" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+
+                  <div style = "display:none;"id="value"></div>
+                  <div style = "margin-left: 270px;" id="cost"> 얼마?</div>
+                  <div style = "display:none;"id="moneymoney">aaa</div>
+
+            </section>
+
+            <section>
+              <div class="row">
+                <h5>지출 이유</h5>
+              </div>
+              <div class="row radio-labels center-align">
+                <div style = "margin-left: 200px;"class="col s1 center-align">
+                  <!-- <div class="row radio-label" style="margin-left:-15px;">과제</div> -->
+                  <p id = "costcheck1" style = "margin-left: -5px;">교재</p>
+                  <div class="row lighten-4 radio-button">
+                    <input value = "교재" class="with-gap" name="project-contribute" type="checkbox" id="project-contribute-1" value="1" />
+                    <label for="project-contribute-1"></label>
+                  </div>
+                </div>
+                <div style = "margin-left: 80px;"class="col s1 center-align">
+                  <!-- <div style = "width:100px; margin-left:-33px;" class="row radio-label">실습/견학비</div> -->
+                  <p id = "costcheck2" style = "margin-left: -46px;">실습/견학비</p>
+                  <div class="row lighten-4 radio-button" style = "margin-left: -45px;">
+                    <input value = "실습/견학비" style = "background-color: #ffffff;"class="with-gap" name="project-contribute" type="checkbox" id="project-contribute-2" value="2" />
+                    <label  for="project-contribute-2"></label>
+                  </div>
+                </div>
+                <div style = "margin-left: 44px;" class="col s1 center-align">
+                  <!-- <div style = "width: 100px; margin-left:-35px;"class="row radio-label">재료비</div> -->
+                  <p id = "costcheck3" style = "margin-left: -10px;">재료비</p>
+                  <div class="row lighten-4 radio-button">
+                    <input value = "재료비" class="with-gap" name="project-contribute" type="checkbox" id="project-contribute-3" value="3" />
+                    <label for="project-contribute-3"></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+                <section>
+                  <div class="row">
+                    <h5>소통</h5>
+                  </div>
+                  <div class="row radio-labels center-align">
+                    <div style = "margin-left: 200px;"class="col s1 center-align">
+                        <div class="row radio-label">빠름</div>
+                        <div class="row lighten-4 radio-button">
+                          <input value = "0" class="with-gap" name="project-commu" type="radio" id="project-commu-1" checked/>
+                          <label for="project-commu-1"></label>
+                        </div>
+                    </div>
+                    <div style = "margin-left: 60px;"class="col s1 center-align">
+                        <div  class="row radio-label">보통</div>
+                        <div class="row lighten-4 radio-button">
+                          <input value = "1" style = "background-color: #ffffff;"class="with-gap" name="project-commu" type="radio" id="project-commu-2" />
+                          <label  for="project-commu-2"></label>
+                        </div>
+                    </div>
+                    <div style = "margin-left: 57px;" class="col s1 center-align">
+                        <div class="row radio-label">느림</div>
+                        <div class="row lighten-4 radio-button">
+                          <input value = "2" class="with-gap" name="project-commu" type="radio" id="project-commu-3" />
+                          <label for="project-commu-3"></label>
+                        </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section>
+                  <div class="row">
+                    <h5>Tag</h5>
+                  </div>
+                  <div class="row radio-labels center-align">
+                    <div style = "margin-left: 210px;"class="col s1 center-align">
+                      <!-- <div class="row radio-label" style="margin-left:-15px;">과제</div> -->
+                      <p id = "tagcheck1" style = "margin-left: -170px;">강의는수면제성적은황천길</p>
+                      <div class="row lighten-4 radio-button" style="margin-left:-196px">
+                        <input value = "강의는수면제성적은황천길" class="with-gap" name="project-tag" type="checkbox" id="project-tag-1" value="1" />
+                        <label for="project-tag-1"></label>
+                      </div>
+                    </div>
+
+                    <div style = "margin-left: 80px;"class="col s1 center-align">
+                      <!-- <div style = "width:100px; margin-left:-33px;" class="row radio-label">실습/견학비</div> -->
+                      <p id = "tagcheck2" style = "margin-left: -43px;">흥미로움</p>
+                      <div class="row lighten-4 radio-button" style = "margin-left: -58px;">
+                        <input value = "흥미로움" style = "background-color: #ffffff;"class="with-gap" name="project-tag" type="checkbox" id="project-tag-2" value="2" />
+                        <label  for="project-tag-2"></label>
+                      </div>
+                    </div>
+
+                    <div style = "margin-left: -12px;" class="col s1 center-align">
+                      <!-- <div style = "width: 100px; margin-left:-35px;"class="row radio-label">재료비</div> -->
+                      <p id = "tagcheck3" style = "width:55px; margin-left: 129px;">꿀교양</p>
+                      <div class="row lighten-4 radio-button" style="margin-left:140px">
+                        <input value = "꿀교양" class="with-gap" name="project-tag" type="checkbox" id="project-tag-3" value="3" />
+                        <label for="project-tag-3"></label>
+                      </div>
+                    </div>
+
+                    <div style = "margin-left: 210px;" class="col s1 center-align">
+                      <!-- <div style = "width: 100px; margin-left:-35px;"class="row radio-label">재료비</div> -->
+                      <p id = "tagcheck4" style = "margin-top:20px; margin-left: -126px;">암기가많아요</p>
+                      <div class="row lighten-4 radio-button" style="margin-left:-196px">
+                        <input value = "암기가많아요" class="with-gap" name="project-tag" type="checkbox" id="project-tag-4" value="4" />
+                        <label for="project-tag-4"></label>
+                      </div>
+                    </div>
+
+                    <div style = "margin-left: 109px;" class="col s1 center-align">
+                      <!-- <div style = "width: 100px; margin-left:-35px;"class="row radio-label">재료비</div> -->
+                      <p id = "tagcheck5" style = "margin-top:20px; margin-left: -107px;">들었는데안들었어요</p>
+                      <div class="row lighten-4 radio-button" style = "margin-left: -111px;">
+                        <input value = "들었는데안들었어요" class="with-gap" name="project-tag" type="checkbox" id="project-tag-5" value="5" />
+                        <label for="project-tag-5"></label>
+                      </div>
+                    </div>
+
+                    <div style = "margin-left: 118px;" class="col s1 center-align">
+                      <!-- <div style = "width: 100px; margin-left:-35px;"class="row radio-label">재료비</div> -->
+                      <p id = "tagcheck6" style = "margin-top:20px; margin-left: -46px;">억지로들음</p>
+                      <div class="row lighten-4 radio-button" style="margin-left:-49px">
+                        <input value = "억지로들음" class="with-gap" name="project-tag" type="checkbox" id="project-tag-6" value="6" />
+                        <label for="project-tag-6"></label>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+
+            <section id="about">
+           <h5 class="center-align">강의 총평</h5>
+        <p class="center-align">솔직한 후기를 남겨보세요.</p>
+        <div id="future"  style = "margin-left: 200px; ">
+          <div class="rating left" style = "text-decoration:none;">
+         <div class="stars right"style = " text-decoration:none;" >
+           <a class="star rated" style = " text-decoration:none; color: yellow;"></a>
+           <a class="star rated"style = "text-decoration:none;"></a>
+           <a class="star rated"style = "text-decoration:none;"></a>
+           <a class="star"style = "text-decoration:none;"></a>
+           <a class="star"style = "text-decoration:none;"></a>
+         </div>
+       </div>
+
+      </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+            <section>
+              <h5 style = "width: 1000px;">
+              </h5>
+              <div class="input-field">
+                <textarea id="contact" style = "height:300px;"name = "content1"rows= "100" cols="50"></textarea>
+              </div>
+            </section>
+            <section>
+              <div class="btn blue-grey darken-3 wave-effect waves-light"  onclick="acomplete();">
+                완성! <i class="material-icons right">send</i>
+              </div>
+            </section>
+          </form>
+        </div>
+        <div id="error-modal" class="modal">
+          <div class="modal-content">
+            <h4>Error!</h4>
+            <p>There has been an unknown error submitting the survey. We're sorry, please try again later!</p>
+          </div>
+          <div class="modal-footer">
+            <a id="close-button" href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a>
+          </div>
+        </div>
+      </main>
+      <footer class="page-footer blue-grey darken-3 grey-text text-lighten-4">
+        <div class="container" style="background-color: #3E4685;">
+          <div class="row">
+            <div class="col m8">
+
+            </div>
+            <div class="right-align col m4">
+
+              </div>
+          </div>
+        </div>
+        <div class="footer-copyright blue-grey darken-3 grey-text text-lighten-4">
+          <div class="container">
+          </div>
+        </div>
+      </footer>
+
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-firestore.js"></script>
+
+      <script type="text/javascript" src="https://nodeschool.io/bainbridge/js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="https://nodeschool.io/bainbridge/js/materialize.min.js"></script>
+      <script type="text/javascript" src="https://nodeschool.io/bainbridge/js/jquery.cookie.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+
+      <!-- Scripts -->
+         <script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.scrolly.min.js"></script>
+         <script src="assets/js/jquery.dropotron.min.js"></script>
+         <script src="assets/js/jquery.scrollex.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/ec.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+         <!-- ** -->
+
+
+
+
+
+
+
+   </body>
+</html>

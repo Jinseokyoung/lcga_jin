@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>만든 사람들 | 이시국앱</title>
+		<meta name="description" content="An animated pieces effect for images with many possibilities" />
+		<meta name="keywords" content="animation, piece, fragment, box, css, javascript, demo, effect, web dev" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/demo-switch.css" />
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+		
+		<script>document.documentElement.className = 'js';</script>
+	</head>
+	<body class="demo-switch loading" style="font-family:'nanumsquare'">
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+		</svg>
+		<main>
+			<div class="message">Please view this demo on a desktop.</div>
+			<div class="frame">
+				<header class="codrops-header">
+					<div class="codrops-links">
+						<a class="codrops-icon codrops-icon--prev" href="login.html">
+						<svg class="icon icon--arrow" style="width:60; height:60">
+							<use xlink:href="#icon-arrow"></use>
+						</svg></a>
+					</div>
+					<h1 class="codrops-header__title">컴 퓨 터 공 학 과</h1>
+				</header>
+				
+					
+				
+				
+			</div>
+			<div class="content" >
+				<header class="content__header">
+					<h2 class="content__title">만든 사람들</h2>
+				</header>
+				<div class="slideshow">
+					<div id="slide-1" class="slide" style="background-image: url(images/j_1.jpg)"></div>
+					<div id="slide-2" class="slide" style="background-image: url(images/j1.jpg)"></div>
+					<div id="slide-3" class="slide" style="background-image: url(images/h1.jpg)"></div>
+					<div id="slide-4" class="slide" style="background-image: url(images/l1.jpg)"></div>
+					<div id="slide-4" class="slide" style="background-image: url(images/m1.jpg)"></div>
+					<div class="pieces" style="background-image: url(images/j_1.jpg)"></div>
+				</div>
+				<nav class="menu">
+					<a class="menu__item menu__item--current" href="#slide-1" data-image="images/j_1.jpg">진 석 영 <span>Web</span><br></a>
+					<a class="menu__item" href="#slide-2" data-image="images/j1.jpg">장 준 호 <span>Mobile</span><br></a>
+					<a class="menu__item" href="#slide-3" data-image="images/h1.jpg">황 찬 영 <span>Mobile</span><br></a>
+					<a class="menu__item" href="#slide-4" data-image="images/l1.jpg">이 효 원 <span>Promotion</span><br></a>
+					<a class="menu__item" href="#slide-5" data-image="images/m1.jpg">문 유 송 <span>Project Manager</span></a>
+				</nav>
+			</div>
+		</main>
+		<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+		<script src="assets/js/anime.min.js"></script>
+		<script src="assets/js/c_main.js"></script>
+		<script>
+		{
+			imagesLoaded(document.body, { background: true }, () => document.body.classList.remove('loading'));
+			
+			const menuItems = Array.from(document.querySelectorAll('.menu > .menu__item'));
+			
+			const piecesObj = new Pieces(document.querySelector('.slideshow > .pieces'), {
+				pieces: {rows: 14, columns: 12},
+				delay: [0,40],
+				hasTilt: true,
+				tilt: {
+					maxRotationX: -1, 
+					maxRotationY: -1, 
+					maxTranslationX: -5, 
+					maxTranslationY: -2
+				}
+			});
+			
+			let isAnimating = false;
+			let current = 0;
+
+			const openImage = (ev, item, pos) => {
+				ev.preventDefault();
+				if ( isAnimating || current === pos ) {
+					return false;
+				}
+				isAnimating = true;
+				menuItems[current].classList.remove('menu__item--current');
+				current = pos;
+				menuItems[current].classList.add('menu__item--current');
+				const imgsrc = item.dataset.image;
+
+				piecesObj.animate({
+					duration: 200,
+					easing: 'easeOutQuad',
+					delay: (t,i,l) => {
+						return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+					},
+					translateX: (t,i) => {
+						return anime.random(-50,50)+'px';
+					},
+					translateY: (t,i) => { 
+						return anime.random(-800,-200)+'px';
+					},
+					rotateZ: (t,i) => { 
+						return anime.random(-45,45)+'deg';
+					},
+					opacity: 0,
+					complete: () => {
+						piecesObj.setImage(imgsrc);
+
+						piecesObj.animate({
+							duration: 500,
+							easing: [0.3,1,0.3,1],
+							delay: (t,i,l) => {
+								return parseInt(t.dataset.row) * parseInt(t.dataset.delay);
+							},
+							translateX: 0,
+							translateY: () => {
+								return [anime.random(200,800)+'px','0px'];
+							},
+							rotateZ: 0,
+							opacity: {
+								value: 1,
+								duration: 500,
+								easing: 'linear'
+							},
+							complete: () => {
+								isAnimating = false;
+							}
+						});
+					}
+				});
+			};
+
+			menuItems.forEach((item,pos) => item.addEventListener('click', (ev) => openImage(ev,item,pos)));
+		}
+		</script>
+		<script src="pater/pater.js"></script>
+	</body>
+</html>
